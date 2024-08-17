@@ -1,0 +1,29 @@
+.contenedorIngresar{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: antiquewhite;
+    max-width: 500px;
+    width: 90%;
+}
+.contenedorPerfiles{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+@media (max-width: 600px) {
+    .contenedor {
+        width: 100%;
+        max-width: none;
+    }
+    
+    #user {
+        width: 40px; 
+        height: 40px;
+    }
+}

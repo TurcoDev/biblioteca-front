@@ -1,0 +1,9 @@
+#user {
+    width: 65px;
+    height: 65px;
+    margin: 0 30px;
+}
+.nombre{
+    text-decoration: none;
+    color: black;
+}
