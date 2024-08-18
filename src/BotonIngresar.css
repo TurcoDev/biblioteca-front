@@ -1,0 +1,23 @@
+.botonIngresar {
+  padding: 10px 5px;
+  background-color: #eb3e3e; /* Color rojo */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 120px; /* Ancho fijo del botón */
+  text-align: center; /* Asegura que el texto esté centrado */
+  margin: 0 auto; 
+}
+
+
+.botonIngresar:hover {
+  background-color: #d61313; /* Color verde más oscuro */
+}
+.contenedorBoton {
+  display: flex;
+  justify-content: center; /* Centra el botón horizontalmente */
+  align-items: center; /* Centra el botón verticalmente si el contenedor tiene altura */
+  width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+}

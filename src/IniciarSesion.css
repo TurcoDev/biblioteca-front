@@ -1,0 +1,42 @@
+.iniciarsesion {
+  font-family: 'Lucida Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #333030; /* Ajusta el grosor y el color del borde según tus necesidades */
+  border-radius: 8px; /* Opcional: redondea las esquinas del borde */
+  background-color:   antiquewhite;
+  ;
+  padding: 20px;
+  max-width: 400px;
+  margin: auto;
+}
+
+.iniciarsesion form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.iniciarsesion label {
+  margin: 10px 0 5px;
+}
+
+.iniciarsesion input {
+  margin-bottom: 10px;
+  padding: 8px;
+  width: 100%; /* Ajusta el ancho al 100% del contenedor */
+  box-sizing: border-box; /* Incluye padding y border en el cálculo del ancho total */
+}
+
+
+.iniciarsesion a {
+  margin-top: 15px;
+  color: black;
+ 
+}
+.logo {
+  width: 80px; /* Ajusta el tamaño según sea necesario */
+  height: 80px; /* Ajusta el tamaño según sea necesario */
+  margin-bottom: 10px; /* Espacio debajo del logo, ajusta según necesites */
+}
