@@ -1,0 +1,36 @@
+.menu-container {
+    background-color: #ff726f; /* Color de fondo similar al de la imagen */
+    padding: 10px;
+    width: 200px; /* Puedes ajustar el ancho según sea necesario */
+  }
+  
+  .logo {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .logo-img {
+    width: 100px; /* Ajusta el tamaño del logo */
+    height: auto;
+    border-radius: 50%;
+  }
+  
+  .menu-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .menu-item {
+    padding: 10px 0;
+    text-align: center;
+    border-top: 2px dashed black; /* Línea punteada superior */
+    border-bottom: 2px dashed black; /* Línea punteada inferior */
+    font-family: Arial, sans-serif;
+    color: black;
+    cursor: pointer;
+  }
+  
+  .menu-item:hover {
+    background-color: #ff5b5b; /* Color al pasar el mouse por encima */
+  }
+  
