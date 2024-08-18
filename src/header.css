@@ -1,0 +1,24 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #f8f8f8; 
+    border-bottom: 2px solid #ddd; /* Línea */
+}
+
+.logo-container {
+    position: absolute;
+    left: 10px; 
+}
+
+.logo {
+    height: 40px; /* Ajusta el tamaño del logo */
+    width: auto;
+}
+
+.header-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
