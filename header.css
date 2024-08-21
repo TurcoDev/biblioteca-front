@@ -1,0 +1,29 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: antiquewhite;
+    border-bottom: 2px solid #ddd; /* Línea */
+    width: 100%; /* Asegura que el header ocupe todo el ancho */
+    box-sizing: border-box; /* Incluye padding en el cálculo del ancho */
+    margin-bottom: 120px;
+}
+
+.logo-container {
+    position: absolute;
+    left: 10px; 
+}
+
+.logo {
+    height: 50px; /* Ajusta el tamaño del logo */
+    width: 50px;
+}
+
+.header-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+    width: 100%; /* Asegura que el título esté centrado y ocupe todo el ancho */
+}
