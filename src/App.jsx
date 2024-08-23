@@ -14,7 +14,7 @@ function App() {
       <Router>
       <Routes>
         <Route path="/" element={<Ingresar />} />
-        <Route path="/iniciar-sesion" element={<IniciarSesion />} />
+        <Route path="/iniciarsesion" element={<IniciarSesion />} />
       </Routes>
     </Router>
     </div>

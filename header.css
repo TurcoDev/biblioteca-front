@@ -7,7 +7,7 @@
     border-bottom: 2px solid #ddd; /* Línea */
     width: 100%; /* Asegura que el header ocupe todo el ancho */
     box-sizing: border-box; /* Incluye padding en el cálculo del ancho */
-    margin-bottom: 120px;
+    margin-bottom: 60px;
 }
 
 .logo-container {
