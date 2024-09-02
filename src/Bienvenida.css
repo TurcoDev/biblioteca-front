@@ -1,0 +1,16 @@
+.contenedorBotones{
+    display: flex;
+    flex-direction: row;
+}
+.contenedorBienvenida{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+    border-radius: 10px;
+    background-color: rgba(240, 240, 240, 0.5);
+    width: 90vh;
+    height: 60vh;
+    margin-top: 50px;
+}
