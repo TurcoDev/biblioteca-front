@@ -4,7 +4,7 @@ const Header = () => {
     return (
         <header className="header">
             <div className="logo-container">
-                <img src="biblioteca-front\logo.png" alt="Logo" className="logo" />
+                <img src="\logo.png" alt="Logo" className="logo" />
             </div>
             <h1 className="header-title">Biblioteca Aulica</h1>
         </header>

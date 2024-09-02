@@ -35,7 +35,7 @@ export default function IniciarSesion() {
           value={contraseña}
           onChange={(e) => setContraseña(e.target.value)}
         />
-        <BotonIngresar type="submit" /> {/* Asegúrate de que el botón tenga el type submit */}
+         <BotonIngresar texto="Ingresar" type="submit" /> 
       </form>
       <a href='#'>Olvidé mi contraseña</a>
     </div>
