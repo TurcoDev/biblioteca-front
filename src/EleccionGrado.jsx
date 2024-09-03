@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Circulo from "./Circulo"; 
 import "./EleccionGrado.css";
 
 const EleccionGrado = () => {
@@ -43,17 +44,16 @@ const EleccionGrado = () => {
       <h1>¿A QUÉ GRADO VOY?</h1>
       <div className="circles-container">
         {circles.map((circle) => (
-          <div
+          <Circulo
             key={circle.id}
-            className="circle"
-            style={{ backgroundColor: circle.color }}
-            onClick={() => handleCircleClick(circle.number, circle.color)} 
-          >
-            {circle.number}
-          </div>
+            number={circle.number}
+            color={circle.color}
+            onClick={() => handleCircleClick(circle.number, circle.color)} // Pasar la función de clic como prop
+          />
         ))}
       </div>
     </div>
+  
   );
 };
 
