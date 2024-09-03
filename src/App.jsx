@@ -1,7 +1,7 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './Header';
-import  Bienvenida from './Bienvenida';
+import Bienvenida from './Bienvenida';
 import EleccionGrado from "./EleccionGrado";
 import NumeroSeleccionado from "./NumeroSeleccionado";
 import IniciarSesion from './IniciarSesion';
@@ -17,7 +17,7 @@ function App() {
             <Header />
             
           <Routes>
-          <Route path="/bienvenida" element={<Bienvenida />} />
+          <Route path="/" element={<Bienvenida />} />
           <Route path="/elecciongrado" element={<EleccionGrado />} />
           <Route path="/numero/:number/:color" element={<NumeroSeleccionado />} />
           <Route path="/iniciarsesion" element={<IniciarSesion />} />
