@@ -42,7 +42,7 @@ const Formulario = ({ tipo, textoBoton }) => {
           <input type="password" id="contraseña" name="contraseña" />
         </div>
 
-        <BotonIngresar texto={textoBoton} /> {/* Incluir el botón con el texto proporcionado */}
+        <BotonIngresar texto={textoBoton}  /> {/* Incluir el botón con el texto proporcionado */}
       </form>
       
     </div>
