@@ -1,0 +1,76 @@
+/* Estilos para el contenedor */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin: 0 15px;
+}
+
+/* Estilos para el botón */
+.dropdown-button {
+    background: linear-gradient(135deg, #ffffff, #808080); /* Degradado de blanco a gris */
+    color: black;
+    padding: 10px 30px; /* Aumenta el padding para que el botón sea más largo */
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    display: flex; /* Utiliza flexbox para alinear el texto, el ícono y la flecha */
+    align-items: center;
+    justify-content: space-between; /* Asegura que el texto y la flecha estén en los extremos */
+    min-width: 200px; /* Ancho mínimo del botón */
+    position: relative; /* Relativo para flecha */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Estilos para el ícono */
+.icon {
+    margin-right: 10px; /* Espacio entre el ícono y el texto */
+    color: red; /* Cambia el color del ícono a rojo */
+}
+
+/* Estilos para la flecha */
+.arrow {
+    margin-left: 10px; /* Espacio entre el texto y la flecha */
+    border: solid white; /* Color de la flecha */
+    border-width: 0 2px 2px 0; /* Forma de la flecha */
+    display: inline-block;
+    padding: 5px;
+    transform: rotate(45deg); /* Rotación inicial para la flecha hacia abajo */
+    transition: transform 0.3s ease; /* Transición suave al abrir/cerrar */
+}
+
+/* Cambia la dirección de la flecha cuando el dropdown está abierto */
+.arrow.up {
+    transform: rotate(-135deg); /* Rotación para la flecha hacia arriba */
+}
+
+/* Estilos para el contenido del dropdown */
+.dropdown-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos en el menú desplegable */
+    justify-content: center; /* Centra los elementos verticalmente */
+    position: absolute;
+    background-color: #f0f0f0; /* Fondo gris claro del contenido */
+    width: 100%; /* Ocupa el mismo ancho que el botón desplegable */
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    margin-top: 5px;
+    border-radius: 4px; /* Bordes redondeados para un mejor diseño */
+}
+
+/* Estilos para las opciones dentro del dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    width: 100%; /* Asegura que las opciones ocupen todo el ancho del menú */
+    text-align: center; /* Centra el texto dentro de cada opción */
+    font-size: 14px;
+    transition: background-color 0.3s ease; /* Transición suave al pasar el ratón */
+}
+
+/* Estilos para las opciones cuando se pasa el mouse por encima */
+.dropdown-content a:hover {
+    background-color: #ddd; /* Fondo gris claro al pasar el mouse */
+}
