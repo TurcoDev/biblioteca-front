@@ -11,15 +11,27 @@ const NumeroSeleccionado = () => {
   // Decodificar color si contiene caracteres especiales
   const decodedColor = decodeURIComponent(color);
 
+  const handleButtonClick = () => {
+     // Convertir el parámetro de número a un entero
+    const num = parseInt(number, 10);
+     // Redirigir a la ruta correspondiente según el número
+    if (num === 1 || num === 2 || num === 3) {
+    navigate('/tarjetadeingreso');
+  } else if (num === 4 || num === 5 || num === 6) {
+    navigate('/crearsesionmayores'); // Redirige a CrearSesionMayores
+  }
+};
+
+
   return (
     <div className="numero-seleccionado-container">
       <Circulo number={number} color={decodedColor} /> {/* Mostrar el círculo */}
       <BotonIngresar 
-        texto="INICIAR SESION CON UN CODIGO" 
+        texto="INICIAR SESIÓN CON UN CÓDIGO" 
         type="button" 
-        onClick={() => navigate(-1)} // Pasa la función de clic como prop
+        onClick={handleButtonClick} // Pasa la función de clic como prop
       />
-    </div>
+      </div>
   );
 };
 

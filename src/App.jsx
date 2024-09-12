@@ -7,6 +7,8 @@ import EleccionGrado from "./EleccionGrado";
 import NumeroSeleccionado from "./NumeroSeleccionado";
 import IniciarSesion from './IniciarSesion';
 import RegistroUsuario from './RegistroUsuario';
+import TarjetaDeIngreso from './IniciarSesionEst';
+import CrearSesionMayores from './IniciarSesionMayores';
 
 import './App.css';
 
@@ -23,7 +25,8 @@ function App() {
           <Route path="/numero/:number/:color" element={<NumeroSeleccionado />} />
           <Route path="/iniciarsesion" element={<IniciarSesion />} />
           <Route path="/registrousuario" element={<RegistroUsuario />} />
-          
+          <Route path="/tarjetadeingreso" element={<TarjetaDeIngreso />} />
+          <Route path="/CrearSesionMayores" element={<CrearSesionMayores />} />
         </Routes>
       </div>
 =======
@@ -53,9 +56,8 @@ import DropdownMenu from './PerfilAdulto.jsx';
     </Router>
   );
 }
-*/
 
-<<<<<<< HEAD
+/*<<<<<<< HEAD
 =======
 function App() {
 
@@ -79,5 +81,5 @@ function App() {
   )
 }
 
->>>>>>> andrea
+>>>>>>> andrea*/
 export default App;

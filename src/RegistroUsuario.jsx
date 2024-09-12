@@ -9,6 +9,7 @@ const RegistroUsuario = () => {
       <Formulario 
         tipo="usuario" 
         textoBoton="Creá Usuario" 
+        
       />
     </div>
   );
