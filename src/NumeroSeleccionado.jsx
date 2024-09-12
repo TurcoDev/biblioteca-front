@@ -16,7 +16,7 @@ const NumeroSeleccionado = () => {
     const num = parseInt(number, 10);
      // Redirigir a la ruta correspondiente según el número
     if (num === 1 || num === 2 || num === 3) {
-    navigate('/targetadeingreso');
+    navigate('/tarjetadeingreso');
   } else if (num === 4 || num === 5 || num === 6) {
     navigate('/crearsesionmayores'); // Redirige a CrearSesionMayores
   }
