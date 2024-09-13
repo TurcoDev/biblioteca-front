@@ -9,7 +9,7 @@ export default function Bienvenida(){
                 <BotonSoy 
                 nombre="SOY ESTUDIANTE" color="orange" ruta="/elecciongrado" />
                 <BotonSoy 
-                nombre="SOY ADULTO" color="yellow"/>
+                nombre="SOY ADULTO" color="yellow" ruta="/DropdownMenu"/>
             </div>
         </div>
     )

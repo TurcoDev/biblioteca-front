@@ -20,13 +20,10 @@ function App() {
         <Router>
           <div className='contenedorPrincipal'>
             <Header />
-              <h1>Te damos la bienvenida!</h1>
-              <div>
-                <h2>Trabajo de Andrea</h2>
-                <DropdownMenu />
-              </div>
+             
           <Routes>
           <Route path="/" element={<Bienvenida />} />
+          <Route path="/DropdownMenu" element={ <DropdownMenu />} />
           <Route path="/Footer" element={<Footer />} />
           <Route path="/Ingresar" element={<Ingresar />} />
           <Route path="/elecciongrado" element={<EleccionGrado />} />
@@ -35,6 +32,7 @@ function App() {
           <Route path="/registrousuario" element={<RegistroUsuario />} />
           <Route path="/tarjetadeingreso" element={<TarjetaDeIngreso />} />
           <Route path="/CrearSesionMayores" element={<CrearSesionMayores />} />
+  
         </Routes>
         </div>
         </Router> 
