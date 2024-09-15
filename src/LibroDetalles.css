@@ -1,0 +1,37 @@
+.detalle-container {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+  
+.detalle-img {
+    width: 250px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+  
+.detalle-info {
+    flex: 1;
+}
+  
+.detalle-title {
+    font-size: 24px;
+    margin: 0;
+    color: #333;
+}
+  
+.detalle-author,
+.detalle-isbn,
+.detalle-year,
+.detalle-description {
+    font-size: 16px;
+    color: #555;
+    margin: 10px 0;
+}
+  
+.detalle-description {
+    font-size: 14px;
+}

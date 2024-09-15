@@ -12,6 +12,8 @@ import RegistroCorreo from './RegistroCorreo';
 import TarjetaDeIngreso from './IniciarSesionEst';
 import CrearSesionMayores from './IniciarSesionMayores';
 import DropdownMenu from './PerfilAdulto.jsx';
+import ListaDeLibros from './ListaDeLibros.jsx';
+import LibroDetalles from './LibroDetalles.jsx';
 
 import './App.css';
 
@@ -33,6 +35,8 @@ function App() {
           <Route path="/registrocorreo" element={<RegistroCorreo />} />
           <Route path="/tarjetadeingreso" element={<TarjetaDeIngreso />} />
           <Route path="/crearsesionmayores/:number/:color" element={<CrearSesionMayores />} />
+          <Route path="/listadelibros" element={<ListaDeLibros />} />
+          <Route path="/libro/:id" element={<LibroDetalles />} />
 
         </Routes>
       </div>
