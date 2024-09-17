@@ -27,7 +27,6 @@ function App() {
               </div>
           <Routes>
           <Route path="/" element={<Bienvenida />} />
-          <Route path="/Footer" element={<Footer />} />
           <Route path="/Ingresar" element={<Ingresar />} />
           <Route path="/elecciongrado" element={<EleccionGrado />} />
           <Route path="/numero/:number/:color" element={<NumeroSeleccionado />} />
@@ -35,6 +34,7 @@ function App() {
           <Route path="/registrousuario" element={<RegistroUsuario />} />
           <Route path="/tarjetadeingreso" element={<TarjetaDeIngreso />} />
           <Route path="/CrearSesionMayores" element={<CrearSesionMayores />} />
+          <Route path="/Footer" element={<Footer />} />
         </Routes>
         </div>
         </Router> 
