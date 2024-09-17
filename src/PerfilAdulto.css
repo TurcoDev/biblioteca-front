@@ -9,8 +9,8 @@
 .dropdown-button {
     background: linear-gradient(135deg, #ffffff, #808080); /* Degradado de blanco a gris */
     color: black;
-    padding: 10px 30px; /* Aumenta el padding para que el botón sea más largo */
-    font-size: 16px;
+    padding: 20px 50px; /* Aumenta el padding para que el botón sea más largo */
+    font-size: 20px;
     border: none;
     cursor: pointer;
     display: flex; /* Utiliza flexbox para alinear el texto, el ícono y la flecha */
@@ -66,7 +66,7 @@
     display: block;
     width: 100%; /* Asegura que las opciones ocupen todo el ancho del menú */
     text-align: center; /* Centra el texto dentro de cada opción */
-    font-size: 14px;
+    font-size: 18px;
     transition: background-color 0.3s ease; /* Transición suave al pasar el ratón */
 }
 

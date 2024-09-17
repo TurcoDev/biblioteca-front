@@ -9,19 +9,19 @@ const EleccionGrado = () => {
   useEffect(() => {
     const numbers = [1, 2, 3, 4, 5, 6];
     const colors = shuffleArray([
-      "#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0", "#9966FF", "#FF9F40"
-    ]).slice(0, numbers.length); // Asegura que el número de colores coincide con el número de círculos
+      "#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0", "#9966FF", "#FF9F40",
+    ]).slice(0, numbers.length); // Ensure the number of colors matches the number of circles
     const shuffledNumbers = shuffleArray(numbers);
 
     const newCircles = shuffledNumbers.map((number, index) => ({
       number,
-      color: colors[index], // Asigna colores únicos a cada número
+      color: colors[index], // Assign unique colors to each number
       id: index,
     }));
     setCircles(newCircles);
   }, []);
 
-  // Baraja el array usando el algoritmo de Fisher-Yates
+  // Shuffle the array using Fisher-Yates algorithm
   const shuffleArray = (array) => {
     let currentIndex = array.length, randomIndex;
 
@@ -35,7 +35,12 @@ const EleccionGrado = () => {
   };
 
   const handleCircleClick = (number, color) => {
-    navigate(`/numero/${number}/${encodeURIComponent(color)}`);
+    if (number >= 1 && number <= 3) {
+      navigate(`/numero/${number}/${encodeURIComponent(color)}`);
+    } else if (number >= 4 && number <= 6) {
+      navigate(`/crearsesionmayores/${number}/${encodeURIComponent(color)}`);
+
+    }
   };
 
   return (
@@ -58,4 +63,5 @@ const EleccionGrado = () => {
 };
 
 export default EleccionGrado;
+
 

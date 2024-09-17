@@ -1,17 +1,17 @@
 .botonIngresar {
   padding: 10px 5px;
-  background-color: #eb3e3e; 
+  background-color: #eb3e3e; /* Color por defecto */
   color: white;
   border: none;
   border-radius: 15px;
   cursor: pointer;
-  font-size: 1.5em; 
-  width: 300px; 
-  text-align: center; 
-  margin: 0 auto; 
+  font-size: 1.7em;
+  width: 200px;
+  text-align: center;
+  margin: 0 auto; /* Esto centra el botón horizontalmente si el contenedor tiene un ancho definido */
+  display: block; /* Asegúrate de que el botón es un bloque para que margin auto funcione */
 }
 
-
 .botonIngresar:hover {
-  background-color: #d61313; 
+  background-color: #d61313; /* Color al pasar el ratón por encima */
 }
