@@ -1,10 +1,12 @@
 import React from 'react';
 import './header.css'; 
+
 const Header = () => {
     return (
         <header className="header">
+            {/* Contenedor para el logo y el título */}
             <div className="logo-container">
-                <img src="biblioteca-front\logo.png" alt="Logo" className="logo" />
+                <img src="\logo.png" alt="Logo" className="logoheader" />
             </div>
             <h1 className="header-title">Biblioteca Aulica</h1>
         </header>
@@ -12,3 +14,4 @@ const Header = () => {
 };
 
 export default Header;
+

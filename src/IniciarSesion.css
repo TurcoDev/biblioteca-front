@@ -3,10 +3,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid #333030; /* Ajusta el grosor y el color del borde según tus necesidades */
-  border-radius: 8px; /* Opcional: redondea las esquinas del borde */
-  background-color:   antiquewhite;
-  ;
+  border: 1px solid #333030;
+  border-radius: 15px;
+  background-color: #f5ecec;
   padding: 20px;
   max-width: 400px;
   margin: auto;
@@ -24,19 +23,27 @@
 
 .iniciarsesion input {
   margin-bottom: 10px;
-  padding: 8px;
+  padding: 12px; /* Aumenta el padding para hacer los inputs más grandes */
   width: 100%; /* Ajusta el ancho al 100% del contenedor */
   box-sizing: border-box; /* Incluye padding y border en el cálculo del ancho total */
+  font-size: 1em; /* Ajusta el tamaño del texto dentro del input */
+  border-radius: 15px;
 }
 
+.botonIngresar {
+  width: 150px; /* Ajusta el tamaño del botón */
+  padding: 10px; /* Ajusta el padding para hacer el botón más pequeño */
+  font-size: 1.2em; /* Ajusta el tamaño del texto en el botón */
+  margin-top: 15px;
+}
 
 .iniciarsesion a {
   margin-top: 15px;
   color: black;
- 
 }
+
 .logo {
-  width: 80px; /* Ajusta el tamaño según sea necesario */
-  height: 80px; /* Ajusta el tamaño según sea necesario */
-  margin-bottom: 10px; /* Espacio debajo del logo, ajusta según necesites */
+  width: 80px;
+  height: 70px;
+  margin-bottom: 10px;
 }

@@ -1,23 +1,17 @@
 .botonIngresar {
   padding: 10px 5px;
-  background-color: #eb3e3e; /* Color rojo */
+  background-color: #eb3e3e; /* Color por defecto */
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 15px;
   cursor: pointer;
-  font-size: 16px;
-  width: 120px; /* Ancho fijo del botón */
-  text-align: center; /* Asegura que el texto esté centrado */
-  margin: 0 auto; 
+  font-size: 1.7em;
+  width: 200px;
+  text-align: center;
+  margin: 0 auto; /* Esto centra el botón horizontalmente si el contenedor tiene un ancho definido */
+  display: block; /* Asegúrate de que el botón es un bloque para que margin auto funcione */
 }
-
 
 .botonIngresar:hover {
-  background-color: #d61313; /* Color verde más oscuro */
-}
-.contenedorBoton {
-  display: flex;
-  justify-content: center; /* Centra el botón horizontalmente */
-  align-items: center; /* Centra el botón verticalmente si el contenedor tiene altura */
-  width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+  background-color: #d61313; /* Color al pasar el ratón por encima */
 }

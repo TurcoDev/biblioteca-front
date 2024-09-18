@@ -1,24 +1,49 @@
+/* Estilos para el contenedor del header */
 .header {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px;
-    background-color: #f8f8f8; 
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+    padding: 30px; /* Aumenta el padding para que el header sea más alto */
+    background-color: rgba(248, 248, 248, 0.8); /* Fondo semitransparente */
     border-bottom: 2px solid #ddd; /* Línea */
+    position: fixed; /* Fija el header en la parte superior de la página */
+    top: 0; /* Posiciona el header en la parte superior de la página */
+    left: 0; /* Asegura que el header cubra toda la pantalla de izquierda a derecha */
+    z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
+    box-sizing: border-box; /* Asegura que el padding y el border no afecten el tamaño total */
 }
 
+/* Estilos para el contenedor del logo */
 .logo-container {
     position: absolute;
-    left: 10px; 
+    left: 20px; /* Espacio a la izquierda del logo */
+    display: flex;
+    align-items: center;
+    z-index: 1100; /* Asegura que el logo esté por encima del header */
 }
 
-.logo {
-    height: 40px; /* Ajusta el tamaño del logo */
+/* Estilos para el logo */
+.logoheader {
+    height: 60px; /* Ajusta el tamaño del logo */
     width: auto;
 }
 
+/* Estilos para el título */
 .header-title {
-    font-size: 24px;
+    font-size: 28px; /* Aumenta el tamaño de fuente del título */
     font-weight: bold;
     margin: 0;
+    position: absolute; /* Centra el título */
+    left: 50%;
+    transform: translateX(-50%); /* Ajusta el título para que esté perfectamente centrado */
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Efecto de sombra al texto */
+    transition: color 0.3s ease, transform 0.3s ease; /* Transición suave para efectos */
+}
+
+/* Efecto hover al texto del título */
+.header-title:hover {
+    color: #ff6347; /* Cambia el color al pasar el mouse */
+    transform: scale(1.1); /* Aumenta el tamaño */
 }

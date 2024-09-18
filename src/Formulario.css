@@ -1,0 +1,105 @@
+/* Estilo principal para el contenedor del formulario */
+.formulario-contenedor {
+    font-family: 'Lucida Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #333030; /* Borde de color gris oscuro */
+    border-radius: 20px; /* Bordes más redondeados */
+    background-color: #ebe7e7; /* Color de fondo */
+    padding: 40px; /* Aumenta el espacio interior para más altura */
+    width: 90%; /* Ancho del contenedor ajustable */
+    max-width: 1200px; /* Ancho máximo del contenedor aumentado */
+    margin: 90px auto; /* Centra el contenedor y añade margen superior */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+}
+
+/* Estilos para el formulario dentro del contenedor */
+.formulario {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Estilos para las etiquetas del formulario */
+.formulario label {
+    margin: 12px 0 6px; /* Espaciado superior e inferior ajustado */
+    color: #333; /* Color del texto */
+    font-weight: bold; /* Negrita para destacar */
+}
+
+/* Estilos para los campos de entrada del formulario */
+.formulario input {
+    margin-bottom: 20px; /* Aumenta el espacio inferior entre campos */
+    padding: 15px; /* Aumenta el espacio interior para hacer los campos más altos */
+    width: 100%; /* Ancho completo del contenedor */
+    box-sizing: border-box; /* Incluye padding y border en el cálculo del ancho total */
+    border: 1px solid #ccc; /* Borde de los campos */
+    border-radius: 20px; /* Bordes más redondeados en los campos de entrada */
+    font-size: 1.2em; /* Aumenta el tamaño de la fuente */
+}
+
+/* Estilos para los botones dentro del formulario */
+
+/* Estilo para los enlaces */
+.formulario-contenedor a {
+    margin-top: 20px; /* Espacio superior */
+    color: black; /* Color del texto del enlace */
+    text-align: center; /* Centra el texto del enlace */
+    display: block; /* Hace que el enlace ocupe una línea completa */
+    font-size: 1.3em; /* Aumenta el tamaño del texto */
+    text-decoration: none; /* Elimina subrayado */
+    padding: 10px 0; /* Espaciado interior */
+    width: 100%; /* Ancho completo */
+}
+
+/* Estilos para el título del formulario */
+.formulario h2 {
+    text-align: center; /* Centra el texto horizontalmente */
+    color: #333; /* Color del texto */
+    margin-bottom: 30px; /* Aumenta el espacio inferior para dar más separación */
+    font-size: 1.8em; /* Aumenta el tamaño de fuente del título */
+}
+
+/* Media queries para hacer el formulario responsive */
+@media (max-width: 768px) {
+    .formulario-contenedor {
+        padding: 20px; /* Reduce el espacio interior en pantallas más pequeñas */
+        width: 95%; /* Ajusta el ancho para pantallas más pequeñas */
+        max-width: 1000px; /* Reduce el ancho máximo para pantallas más pequeñas */
+    }
+
+    .formulario input {
+        padding: 10px; /* Ajusta el padding para pantallas más pequeñas */
+        font-size: 1em; /* Ajusta el tamaño de la fuente para pantallas más pequeñas */
+    }
+
+    .formulario h2 {
+        font-size: 1.5em; /* Ajusta el tamaño de fuente del título */
+    }
+
+    .formulario-contenedor a {
+        font-size: 1.1em; /* Ajusta el tamaño de la fuente del enlace */
+    }
+}
+
+@media (max-width: 480px) {
+    .formulario-contenedor {
+        padding: 15px; /* Reduce aún más el espacio interior en pantallas muy pequeñas */
+        width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+        max-width: 100%; /* Asegura que el contenedor no exceda el ancho de la pantalla */
+    }
+
+    .formulario input {
+        padding: 8px; /* Reduce el padding en pantallas muy pequeñas */
+        font-size: 0.9em; /* Ajusta el tamaño de la fuente */
+    }
+
+    .formulario h2 {
+        font-size: 1.3em; /* Ajusta el tamaño de fuente del título */
+    }
+
+    .formulario-contenedor a {
+        font-size: 1em; /* Ajusta el tamaño de la fuente del enlace */
+    }
+}
