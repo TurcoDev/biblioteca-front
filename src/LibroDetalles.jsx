@@ -32,7 +32,6 @@ function LibroDetalles() {
     <div className="detalle-container">
       <img src={libro.imagen} alt={libro.titulo} className="detalle-img" />
       <div className="detalle-info">
-        <h1 className="detalle-title">{libro.titulo}</h1>
         <p className="detalle-author">Autor: {libro.autor}</p>
         <p className="detalle-isbn">ISBN: {libro.isbn}</p>
         <p className="detalle-year">Año de Publicación: {libro.año_publicacion}</p>

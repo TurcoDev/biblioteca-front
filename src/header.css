@@ -12,6 +12,7 @@
     left: 0; /* Asegura que el header cubra toda la pantalla de izquierda a derecha */
     z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
     box-sizing: border-box; /* Asegura que el padding y el border no afecten el tamaño total */
+    line-height: 8px;
 }
 
 /* Estilos para el contenedor del logo */

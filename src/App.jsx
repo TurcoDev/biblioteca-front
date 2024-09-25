@@ -33,7 +33,8 @@ function App() {
           <Route path="/iniciarsesion" element={<IniciarSesion />} />
           <Route path="/registrousuario" element={<RegistroUsuario />} />
           <Route path="/registrocorreo" element={<RegistroCorreo />} />
-          <Route path="/tarjetadeingreso" element={<TarjetaDeIngreso />} />
+          <Route path="/tarjetadeingreso/:color" element={<TarjetaDeIngreso />} />
+
           <Route path="/crearsesionmayores/:number/:color" element={<CrearSesionMayores />} />
           <Route path="/listadelibros" element={<ListaDeLibros />} />
           <Route path="/libro/:id" element={<LibroDetalles />} />

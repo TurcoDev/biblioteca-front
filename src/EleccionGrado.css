@@ -4,7 +4,7 @@
   align-items: center;
   border-radius: 20px; /* Bordes más redondeados */
   justify-content: center;
-  height: 80vh; /* Ajusta a la altura deseada */
+  height: 60vh; /* Ajusta a la altura deseada */
   background-color: rgba(228, 222, 222, 0.8);
   font-family: Arial, sans-serif;
   position: relative;
@@ -41,4 +41,5 @@ h1 {
   color: white;
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 0 10px;
 }

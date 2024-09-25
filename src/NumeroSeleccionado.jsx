@@ -12,15 +12,14 @@ const NumeroSeleccionado = () => {
   const decodedColor = decodeURIComponent(color);
 
   const handleButtonClick = () => {
-     // Convertir el parámetro de número a un entero
     const num = parseInt(number, 10);
-     // Redirigir a la ruta correspondiente según el número
     if (num === 1 || num === 2 || num === 3) {
-    navigate('/tarjetadeingreso');
-  } else if (num === 4 || num === 5 || num === 6) {
-    navigate('/crearsesionmayores'); // Redirige a CrearSesionMayores
-  }
-};
+      navigate(`/tarjetadeingreso/${encodeURIComponent(color)}`);
+    } else if (num === 4 || num === 5 || num === 6) {
+      navigate('/crearsesionmayores'); 
+    }
+  };
+  
 
 
   return (
