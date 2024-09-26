@@ -11,13 +11,15 @@ const EleccionGrado = () => {
     const colors = shuffleArray([
       "#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0", "#9966FF", "#FF9F40",
     ]).slice(0, numbers.length); // Ensure the number of colors matches the number of circles
-    const shuffledNumbers = shuffleArray(numbers);
 
-    const newCircles = shuffledNumbers.map((number, index) => ({
+    const newCircles = numbers.map((number, index) => ({
       number,
       color: colors[index], // Assign unique colors to each number
       id: index,
+      top: `${Math.random() * 80}%`,   // Generate random value for top
+      left: `${Math.random() * 80}%`,  // Generate random value for left
     }));
+
     setCircles(newCircles);
   }, []);
 
@@ -39,7 +41,6 @@ const EleccionGrado = () => {
       navigate(`/numero/${number}/${encodeURIComponent(color)}`);
     } else if (number >= 4 && number <= 6) {
       navigate(`/crearsesionmayores/${number}/${encodeURIComponent(color)}`);
-
     }
   };
 
@@ -51,7 +52,13 @@ const EleccionGrado = () => {
           <div
             key={circle.id}
             className="circle"
-            style={{ backgroundColor: circle.color }}
+            style={{
+              backgroundColor: circle.color,
+              position: 'absolute', // Ensure absolute positioning is applied
+              top: circle.top,
+              left: circle.left,
+              transform: "translate(-50%, -50%)", // Ensure the circle is properly centered
+            }}
             onClick={() => handleCircleClick(circle.number, circle.color)} 
           >
             {circle.number}
@@ -63,5 +70,3 @@ const EleccionGrado = () => {
 };
 
 export default EleccionGrado;
-
-
