@@ -19,7 +19,7 @@ export default function TarjetaDeIngreso() {
       <h2>INICIAR SESIÓN</h2>
 
       <form>
-        <label htmlFor='codigo'>INGRESA EL CÓDIGO</label>
+        <label htmlFor='codigo'>INGRESA EL CÓDIGO: ARBOL834</label>
         <input type="text" placeholder="Ingrese su código" className='input' />
 
         {/* Cambiar el color del botón y pasarlo como prop */}

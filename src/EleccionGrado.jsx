@@ -9,7 +9,7 @@ const EleccionGrado = () => {
   useEffect(() => {
     const numbers = [1, 2, 3, 4, 5, 6];
     const colors = shuffleArray([
-      "#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0", "#9966FF", "#FF9F40",
+      "blue", "red", "orange", "yellow", "brown", "green",
     ]).slice(0, numbers.length); // Ensure the number of colors matches the number of circles
     const shuffledNumbers = shuffleArray(numbers);
 
