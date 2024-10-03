@@ -2,32 +2,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 20px; /* Bordes más redondeados */
+  border-radius: 20px;
   justify-content: center;
-  height: 80vh; /* Ajusta a la altura deseada */
+  width: 120vh;
+  height: 60vh;
   background-color: rgba(228, 222, 222, 0.8);
   font-family: Arial, sans-serif;
   position: relative;
-  margin-top: 100px; /* Ajusta este valor según sea necesario */
-}
-
-h1 {
-  font-size: 2rem;
-  margin: 0; /* Elimina el margen predeterminado */
-  color: #333;
-  text-align: left; /* Alinea el texto a la izquierda */
-  position: absolute; /* Posiciona el <h1> de forma absoluta dentro del contenedor */
-  top: 2rem; /* Ajusta la distancia desde el borde superior */
-  left: 2rem; /* Ajusta la distancia desde el borde izquierdo */
-  width: auto; /* Ajusta el ancho del <h1> según el contenido */
+  margin-top: 100px;
 }
 
 .circles-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: relative; /* Important to position circles absolutely inside this container */
 }
 
 .circle {
@@ -41,4 +29,5 @@ h1 {
   color: white;
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: absolute; /* Ensure it's absolutely positioned */
 }
