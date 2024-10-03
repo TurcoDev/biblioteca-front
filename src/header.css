@@ -4,47 +4,54 @@
     align-items: center;
     justify-content: center;
     width: 100%; /* Ocupa todo el ancho de la pantalla */
-    padding: 30px; /* Aumenta el padding para que el header sea más alto */
+    padding: 30px;
     background-color: rgba(248, 248, 248, 0.8); /* Fondo semitransparente */
-    border-bottom: 2px solid #ddd; /* Línea */
-    position: fixed; /* Fija el header en la parte superior de la página */
-    top: 0; /* Posiciona el header en la parte superior de la página */
-    left: 0; /* Asegura que el header cubra toda la pantalla de izquierda a derecha */
-    z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
-    box-sizing: border-box; /* Asegura que el padding y el border no afecten el tamaño total */
-    line-height: 8px;
+    border-bottom: 2px solid #ddd; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-sizing: border-box;
 }
 
 /* Estilos para el contenedor del logo */
 .logo-container {
     position: absolute;
-    left: 20px; /* Espacio a la izquierda del logo */
+    left: 0; /* Pegado al borde izquierdo */
     display: flex;
     align-items: center;
-    z-index: 1100; /* Asegura que el logo esté por encima del header */
 }
 
 /* Estilos para el logo */
-.logoheader {
-    height: 60px; /* Ajusta el tamaño del logo */
+.logo {
+    height: 50px;
     width: auto;
+    margin-left: 10px; /* Un pequeño margen si deseas algo de espacio del borde */
 }
 
-/* Estilos para el título */
+/* Animación de movimiento y cambio de color del título */
+@keyframes slideAndColorChange {
+    0% {
+        transform: translateX(0); /* Comienza justo al lado del logo */
+        color: #333; /* Color inicial */
+    }
+    100% {
+        transform: translateX(calc(50vw - 50% - 50px)); /* Se desplaza hasta el centro del viewport, compensando el ancho del logo */
+        color: #0066cc; /* Cambia a color final */
+    }
+}
+
+/* Estilos para el título con la animación */
 .header-title {
-    font-size: 28px; /* Aumenta el tamaño de fuente del título */
+    font-size: 28px;
     font-weight: bold;
     margin: 0;
-    position: absolute; /* Centra el título */
-    left: 50%;
-    transform: translateX(-50%); /* Ajusta el título para que esté perfectamente centrado */
+    position: absolute;
+    left: 70px; /* Ajuste para empezar más allá del logo */
     color: #333;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Efecto de sombra al texto */
-    transition: color 0.3s ease, transform 0.3s ease; /* Transición suave para efectos */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: slideAndColorChange 2s ease-out forwards; /* Aplica la animación */
+    white-space: nowrap; /* Evita que el texto se divida en líneas */
+    transform-origin: left center; /* Asegura que todo el contenedor del texto esté centrado */
 }
 
-/* Efecto hover al texto del título */
-.header-title:hover {
-    color: #ff6347; /* Cambia el color al pasar el mouse */
-    transform: scale(1.1); /* Aumenta el tamaño */
-}
