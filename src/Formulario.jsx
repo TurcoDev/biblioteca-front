@@ -1,30 +1,52 @@
+
 import React from 'react';
 import BotonIngresar from './BotonIngresar'; // Asegúrate de que la ruta sea correcta
 import './Formulario.css'; // Importa el archivo CSS
 
-const Formulario = ({ campos, textoBoton }) => {
+const Formulario = ({ tipo, textoBoton }) => {
   return (
-    <div className="formulario-contenedor">
+    <div className="formulario-contenedor"> {/* Nuevo contenedor para aplicar estilos */}
+     
       <form className="formulario">
-        <h2>¡Ingresá los datos!</h2> {/* Título común para ambos formularios */}
+        <h2>¡Creá tu cuenta!</h2> {/* Título común para ambos formularios */}
 
-        {/* Generar dinámicamente los campos del formulario */}
-        {campos.map((campo, index) => (
-          <div key={index}>
-            <label htmlFor={campo.id}>{campo.label}:</label>
-            <input
-              type={campo.type}
-              id={campo.id}
-              name={campo.name}
-              placeholder={campo.placeholder || ''}
-            />
-          </div>
-        ))}
+        <div>
+        {tipo === 'usuario' ? (
+          <>
+            <div>
+              <label htmlFor="usuario">Nombre de Usuario:</label>
+              <input type="text" id="usuario" name="usuario" />
+            </div>
+          </>
+        ) : (
+          <>
+            <div>
+              <label htmlFor="correo">Correo Electrónico:</label>
+              <input type="email" id="correo" name="correo" />
+            </div>
+          </>
+        )}
+        
+          <label htmlFor="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" />
+        </div>
+        
+        <div>
+          <label htmlFor="apellido">Apellido:</label>
+          <input type="text" id="apellido" name="apellido" />
+        </div>
+        
+    
+        <div>
+          <label htmlFor="contraseña">Contraseña:</label>
+          <input type="password" id="contraseña" name="contraseña" />
+        </div>
 
-        <BotonIngresar texto={textoBoton} /> {/* Incluir el botón con el texto proporcionado */}
+        <BotonIngresar texto={textoBoton}  /> {/* Incluir el botón con el texto proporcionado */}
       </form>
+      
     </div>
   );
 };
 
-export default Formulario;
+export default Formulario
