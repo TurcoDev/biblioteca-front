@@ -1,4 +1,4 @@
-// Formulario.js
+
 import React from 'react';
 import BotonIngresar from './BotonIngresar';
 import './Formulario.css'; // Importa el archivo CSS
@@ -49,4 +49,4 @@ const Formulario = ({ tipo, textoBoton }) => {
   );
 };
 
-export default Formulario;
+export default Formulario
