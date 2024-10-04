@@ -14,6 +14,7 @@ import CrearSesionMayores from './IniciarSesionMayores';
 import DropdownMenu from './PerfilAdulto.jsx';
 import ListaDeLibros from './ListaDeLibros.jsx';
 import LibroDetalles from './LibroDetalles.jsx';
+import CargarLibros from './cargaLibros.jsx';
 
 import './App.css';
 
@@ -38,6 +39,7 @@ function App() {
           <Route path="/crearsesionmayores/:number/:color" element={<CrearSesionMayores />} />
           <Route path="/listadelibros" element={<ListaDeLibros />} />
           <Route path="/libro/:id" element={<LibroDetalles />} />
+          <Route path="/cargarlibros" element={<CargarLibros />} />
 
         </Routes>
       </div>
