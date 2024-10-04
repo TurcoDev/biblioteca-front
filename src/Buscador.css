@@ -1,0 +1,74 @@
+.search-bar-container {
+    text-align: center;
+    margin-top: 20px;
+    position: relative;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .search-bar {
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba(223, 199, 199, 0.5); /* Fondo transparente */
+    padding: 10px;
+    border-radius: 50px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px); /* Esto agrega un efecto de desenfoque de fondo */
+   
+  }
+  
+  
+  
+  .search-bar input {
+    border: none;
+    background-color: #F8D7DA; /* Color de fondo rosa */
+    border-radius: 50px;
+    outline: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    flex: 1;
+    color: #333; /* Color del texto */
+  }
+  
+  .search-bar button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #f8d7da; /* Color de fondo rosa similar al input */
+    position: relative;
+  }
+  
+  .search-bar button::before {
+    content: '';
+    display: block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid #333; /* Color del borde del círculo */
+    position: absolute;
+    top: 6px;
+    left: 6px;
+  }
+  
+  .search-bar button::after {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 2px;
+    background-color: #333; /* Color de la línea */
+    position: absolute;
+    top: 18px;
+    left: 16px;
+    transform: rotate(45deg);
+  }
+  

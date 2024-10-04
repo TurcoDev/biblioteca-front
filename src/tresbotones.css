@@ -1,0 +1,50 @@
+/* General container to center the buttons */
+.library-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+/* Flexbox to align the buttons in a row */
+.button-container {
+  display: flex;
+  gap: 20px; /* Space between buttons */
+  width: 80%; /* Adjust width based on your preference */
+  justify-content: space-around;
+}
+
+/* Individual button styling */
+.library-button {
+  background-color: rgba(255, 255, 255, 0.8); /* Background with transparency */
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 250px; /* Width of each button container */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow for a 3D effect */
+}
+
+/* Titles inside each button */
+.library-button h3 {
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: #000;
+  margin-bottom: 15px;
+}
+
+/* Button itself */
+.library-button button {
+  background-color: #ffcc99;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.library-button button:hover {
+  background-color: #f49b42;
+  color: white;
+}
