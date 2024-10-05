@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Formulario.css';
+import './cargaLibros.css';
 import BotonIngresar from './BotonIngresar';
 
 const CargarLibros = () => {
@@ -19,7 +19,7 @@ const CargarLibros = () => {
                 <form onSubmit={handleSubmit} className="formulario">
                     <h2>Cargar Libros</h2>
                     <div>
-                        <label htmlFor="nombre">Nombre Libro:</label>
+                        <label htmlFor="nombre">Nombre del Libro:</label>
                         <input type="text" id="nombre" name="nombre" required />
                     </div>
 
