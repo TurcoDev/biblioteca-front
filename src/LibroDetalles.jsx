@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { books } from "./mocks/books";
+import { initialBooks } from "./mocks/books";
 import './LibroDetalles.css';
 
 function LibroDetalles() {
@@ -10,11 +10,11 @@ function LibroDetalles() {
   const [libro, setLibro] = useState(null);
 
   // Se muestran los libros en consola
-  console.log(books);
+  console.log(initialBooks);
 
   // useEffect para simular la obtención de datos (como si fuera de una API)
   useEffect(() => {
-    const libroEncontrado = books.find((libro) => libro.id === parseInt(id));
+    const libroEncontrado = initialBooks.find((libro) => libro.id === parseInt(id));
     setLibro(libroEncontrado); // Actualizar el estado con los datos del libro
   }, [id]); // El efecto se ejecutará cada vez que cambie el id
 

@@ -3,7 +3,7 @@ import Libro from './Libro'; // Importa el componente Libro
 import { initialBooks } from "./mocks/books";
 import './ListaDeLibros.css';
 
-function ListaDeLibros() {
+function ListaDeLibros({ books }) {
 
   // Ejemplo de como leer datos de un json con fetch
   // El inconveniente es que no puede cargarse informacion solo se los dejo de ejemplo

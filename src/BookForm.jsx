@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-import { books } from "./mocks/books";
+import { initialBooks } from "./mocks/books";
 
-function BookForm() {
-  const [bookArray, setBookArray] = useState(books); // Estado que guarda el array de libros
+function BookForm({ addBook }) {
+  const [bookArray, setBookArray] = useState(initialBooks); // Estado que guarda el array de libros
   const [formData, setFormData] = useState({
     id: bookArray.length + 1,
     titulo: "",
@@ -26,7 +26,10 @@ function BookForm() {
   // Manejar el envío del formulario
   const handleSubmit = (e) => {
     e.preventDefault();
-    setBookArray([...bookArray, formData]); // Añadir nuevo libro al array
+    // Crear el nuevo libro con un ID único
+    const newBook = { ...formData, id: Date.now() };
+    addBook(newBook); // Añadir el libro al array
+    // Limpiar el formulario
     setFormData({ id: bookArray.length + 2, titulo: "", autor: "", isbn: "", año_publicacion: "", imagen: "", descripcion: "" }); // Limpiar formulario
   };
 

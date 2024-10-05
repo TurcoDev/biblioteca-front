@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
@@ -49,7 +49,7 @@ function App() {
           {/* Se le pasa por props la funcion para agregar un libro */}
           <Route path="/cargarlibro/" element={<BookForm addBook={addBook} />} />
           {/* Se le pasa por props el array de libros */}
-          <Route path="/listadelibros" element={<ListaDeLibros books={books} />} />
+          <Route path="/listadelibros" element={<ListaDeLibros books={bookArray} />} />
           <Route path="/libro/:id" element={<LibroDetalles />} />
           <Route path="/cargarlibros" element={<CargarLibros />} />
 
