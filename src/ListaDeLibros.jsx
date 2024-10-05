@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Libro from './Libro'; // Importa el componente Libro
-import { initialBooks } from "./mocks/books";
 import './ListaDeLibros.css';
 
 function ListaDeLibros({ books }) {
@@ -19,6 +18,9 @@ function ListaDeLibros({ books }) {
 
   return (
     <div className="card-container">
+      <Link to="/cargarlibros">
+        <button>Regresar a la carga</button>
+      </Link>
       <div className="card-list">
         {books.map((libro) => (
           <Libro key={libro.id} libro={libro} />
