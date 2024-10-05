@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-import { initialBooks } from "./mocks/books";
+import { Link } from "react-router-dom";
 
 function BookForm({ addBook }) {
-  const [bookArray, setBookArray] = useState(initialBooks); // Estado que guarda el array de libros
+  
   const [formData, setFormData] = useState({
-    id: bookArray.length + 1,
     titulo: "",
     autor: "",
     isbn: "",

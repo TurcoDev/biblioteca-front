@@ -51,7 +51,8 @@ function App() {
           {/* Se le pasa por props el array de libros */}
           <Route path="/listadelibros" element={<ListaDeLibros books={bookArray} />} />
           <Route path="/libro/:id" element={<LibroDetalles />} />
-          <Route path="/cargarlibros" element={<CargarLibros />} />
+          {/* Se le pasa por props la funcion para agregar un libro */}
+          <Route path="/cargarlibros" element={<CargarLibros addBook={addBook} />} />
 
         </Routes>
       </div>
