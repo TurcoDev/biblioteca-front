@@ -1,5 +1,5 @@
 // Simulación de datos (en lugar de una API)
-export const books = [
+export const initialBooks = [
   { id: 1, titulo: 'Cien Años de Soledad', autor: 'Gabriel García Márquez', isbn: 'Codigo1', año_publicacion: '1990', imagen: 'https://images.cdn3.buscalibre.com/fit-in/360x360/61/8d/618d227e8967274cd9589a549adff52d.jpg', descripcion: 'Descripción del libro.' },
   { id: 2, titulo: 'Don Quijote de la Mancha', autor: 'Miguel de Cervantes', isbn: 'Codigo2', año_publicacion: '1990', imagen: 'https://images.cdn1.buscalibre.com/fit-in/360x360/19/c7/19c70e689956601918101b09f0bb0b3c.jpg', descripcion: 'Descripción del libro.' },
   { id: 3, titulo: 'La Odisea', autor: 'Homero', isbn: 'Codigo3', año_publicacion: '1990', imagen: 'https://images.cdn3.buscalibre.com/fit-in/360x360/c0/5a/c05ad53842227a1416e03310ee840934.jpg', descripcion: 'Descripción del libro.' },

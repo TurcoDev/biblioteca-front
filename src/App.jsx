@@ -14,10 +14,20 @@ import CrearSesionMayores from './IniciarSesionMayores';
 import DropdownMenu from './PerfilAdulto.jsx';
 import ListaDeLibros from './ListaDeLibros.jsx';
 import LibroDetalles from './LibroDetalles.jsx';
+import BookForm from './BookForm.jsx';
+import { initialBooks } from "./mocks/books";
 
 import './App.css';
 
 function App() {
+  const [bookArray, setBookArray] = useState(initialBooks);
+
+  // Función para añadir un libro al array
+  // Esta funcion la pasamos por parametro callback y la ejecutamos en la ruta de carga
+  const addBook = (newBook) => {
+    setBookArray([...bookArray, newBook]);
+  };
+
   return (
     <Router>
       <div className='contenedorPrincipal'>
@@ -34,9 +44,11 @@ function App() {
           <Route path="/registrousuario" element={<RegistroUsuario />} />
           <Route path="/registrocorreo" element={<RegistroCorreo />} />
           <Route path="/tarjetadeingreso/:color" element={<TarjetaDeIngreso />} />
-
           <Route path="/crearsesionmayores/:number/:color" element={<CrearSesionMayores />} />
-          <Route path="/listadelibros" element={<ListaDeLibros />} />
+          {/* Se le pasa por props la funcion para agregar un libro */}
+          <Route path="/cargarlibro/" element={<BookForm addBook={addBook} />} />
+          {/* Se le pasa por props el array de libros */}
+          <Route path="/listadelibros" element={<ListaDeLibros books={books} />} />
           <Route path="/libro/:id" element={<LibroDetalles />} />
 
         </Routes>
