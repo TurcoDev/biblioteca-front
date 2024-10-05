@@ -1,6 +1,6 @@
 
 import React from 'react';
-import BotonIngresar from './BotonIngresar'; // Asegúrate de que la ruta sea correcta
+import BotonIngresar from './BotonIngresar';
 import './Formulario.css'; // Importa el archivo CSS
 
 const Formulario = ({ tipo, textoBoton }) => {

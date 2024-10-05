@@ -14,6 +14,7 @@ import CrearSesionMayores from './IniciarSesionMayores';
 import DropdownMenu from './PerfilAdulto.jsx';
 import ListaDeLibros from './ListaDeLibros.jsx';
 import LibroDetalles from './LibroDetalles.jsx';
+import CargarLibros from './cargaLibros.jsx';
 import BookForm from './BookForm.jsx';
 import { initialBooks } from "./mocks/books";
 
@@ -50,6 +51,7 @@ function App() {
           {/* Se le pasa por props el array de libros */}
           <Route path="/listadelibros" element={<ListaDeLibros books={books} />} />
           <Route path="/libro/:id" element={<LibroDetalles />} />
+          <Route path="/cargarlibros" element={<CargarLibros />} />
 
         </Routes>
       </div>

@@ -1,0 +1,42 @@
+/* Estilo principal para el contenedor del formulario */
+.formulario-contenedor {
+    font-family: 'Lucida Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #333030; /* Borde de color gris oscuro */
+    border-radius: 20px; /* Bordes más redondeados */
+    background-color: #ebe7e7; /* Color de fondo */
+    padding: 40px; /* Aumenta el espacio interior para más altura */
+    width: 90%; /* Ancho del contenedor ajustable */
+    max-width: 1200px; /* Ancho máximo del contenedor aumentado */
+    margin: 90px auto; /* Centra el contenedor y añade margen superior */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+}
+
+/* Distribución en dos columnas del formulario y la imagen */
+.formulario-contenido {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+}
+
+/* El formulario ocupará el 60% del ancho */
+.formulario {
+    width: 60%;
+}
+
+/* El contenedor de la imagen ocupará el 40% */
+.imagen-contenedor {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen-libro {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+}
