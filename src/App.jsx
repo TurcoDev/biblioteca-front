@@ -21,7 +21,6 @@ import { initialBooks } from "./mocks/books";
 import './App.css';
 
 function App() {
-  const [bookArray, setBookArray] = useState(initialBooks);
 
   // Función para añadir un libro al array
   // Esta funcion la pasamos por parametro callback y la ejecutamos en la ruta de carga
@@ -49,7 +48,7 @@ function App() {
           {/* Se le pasa por props la funcion para agregar un libro */}
           <Route path="/cargarlibro/" element={<BookForm addBook={addBook} />} />
           {/* Se le pasa por props el array de libros */}
-          <Route path="/listadelibros" element={<ListaDeLibros books={bookArray} />} />
+          <Route path="/listadelibros" element={<ListaDeLibros/>} />
           <Route path="/libro/:id" element={<LibroDetalles />} />
           {/* Se le pasa por props la funcion para agregar un libro */}
           <Route path="/cargarlibros" element={<CargarLibros addBook={addBook} />} />

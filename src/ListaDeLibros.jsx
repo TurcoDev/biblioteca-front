@@ -1,20 +1,17 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Libro from './Libro'; // Importa el componente Libro
+import Libro from './Libro';
 import './ListaDeLibros.css';
 
-function ListaDeLibros({ books }) {
+function ListaDeLibros() {
+  const [books, setBooks] = useState([]);
 
-  // Ejemplo de como leer datos de un json con fetch
-  // El inconveniente es que no puede cargarse informacion solo se los dejo de ejemplo
-  /*
-    useEffect(() => {
-      fetch("/books.json")
-        .then((response) => response.json())
-        .then((data) => setBooks(data))
-        .catch((error) => console.error("Error al cargar los libros:", error));
-    }, []);
-  */
-
+  useEffect(() => {
+    fetch("http://localhost:3000/libro")
+      .then((response) => response.json())
+      .then((data) => setBooks(data))
+      .catch((error) => console.error("Error al cargar los libros:", error));
+  }, []);
 
   return (
     <div className="card-container">
@@ -23,12 +20,11 @@ function ListaDeLibros({ books }) {
       </Link>
       <div className="card-list">
         {books.map((libro) => (
-          <Libro key={libro.id} libro={libro} />
+          <Libro key={libro.book_id} libro={libro} />
         ))}
       </div>
     </div>
   );
 }
-
 
 export default ListaDeLibros;
