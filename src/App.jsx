@@ -32,11 +32,10 @@ function App() {
     <Router>
       <div className='contenedorPrincipal'>
         <Header />
-
+        <Footer />
         <Routes>
           <Route path="/" element={<Bienvenida />} />
           <Route path="/DropdownMenu" element={<DropdownMenu />} />
-          <Route path="/Footer" element={<Footer />} />
           <Route path="/Ingresar" element={<Ingresar />} />
           <Route path="/elecciongrado" element={<EleccionGrado />} />
           <Route path="/numero/:number/:color" element={<NumeroSeleccionado />} />
