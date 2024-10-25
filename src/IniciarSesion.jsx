@@ -4,17 +4,65 @@ import './IniciarSesion.css'
 import './BotonIngresar.jsx'
 import BotonIngresar from './BotonIngresar.jsx'
 
+const loggedUser = {
+  username: "",
+  password_hash: "",
+  email: "",
+  role_id:"", // id de la tabla roles
+  is_moroso:false
+}
 
 export default function IniciarSesion() {
   const [usuario, setUsuario] = useState('');
   const [contraseña, setContraseña] = useState('');
+  const [loggedUser, setLoggedUser] = useState(null);
+  //const textoBoton = 'Ingresar'; //TODO: quitar esto, lo agregue porque no cargaba el form (Uncaught ReferenceError: textoBoton is not defined)
 
-  const manejarSubmit = (e) => {
-    e.preventDefault();
-    // Lógica para manejar el inicio de sesión
-    console.log("Usuario:", usuario);
-    console.log("Contraseña:", contraseña);
-  };
+    const manejarSubmit = async (e) => {
+      e.preventDefault();
+      // Lógica para manejar el inicio de sesión
+      console.log("Usuario:", usuario);
+      console.log("Contraseña:", contraseña);
+
+      // Body de la petición
+      const userToLogin = {
+        username: usuario,
+        password_hash: contraseña,
+      };
+
+      try {
+          // Llamada al servidor
+          const response = await fetch('http://localhost:3000/login', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(userToLogin),
+          }).then(response => response.json()) // Convertir la respuesta a formato JSON
+          .then(data => { // Manejar la respuesta
+              if (data.error) { // Si hay un error, mostrarlo y actualizar el estado del usuario logueado a null
+                console.error(data.error);
+                setLoggedUser(null);
+                
+                // TODO: ESTO ES PROVISORIO, VER QUE DECIDE EL EQUPO SEL FRONT QUE DEBE HACERSE
+                // Mostrar alerta de error
+                alert(data.error);
+
+              } else { // Si no hay un error, mostrar el mensaje y actualizar el estado del usuario logueado
+                console.log(data.message);
+                setLoggedUser(data);
+
+                // TODO: ESTO ES PROVISORIO, VER QUE DECIDE EL EQUPO SEL FRONT QUE DEBE HACERSE
+                //Redireccionar a la página principal
+                window.location.href = '/libros';
+              }
+          });
+
+      } catch (error) {
+          console.error('Error:', error);
+      }
+
+    };
 
   return (
     <div className='iniciarsesion'>
