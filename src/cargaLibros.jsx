@@ -14,15 +14,16 @@ const CargarLibros = () => {
         publication_year: "",
         copy_number: "",
         origin: "",
-        classroom_library_id: "" // ID de la biblioteca
+        classroom_library_id: "", // ID de la biblioteca
+        portada: null // Inicialmente, no hay archivo
     });
 
     // Manejar cambios en el formulario
     const handleChange = (e) => {
-        const { name, value } = e.target;
+        const { name, value, type, files } = e.target;
         setFormData({
             ...formData,
-            [name]: value,
+            [name]: type === 'file' ? files[0] : value, // Manejar archivos
         });
     };
 
@@ -56,15 +57,15 @@ const CargarLibros = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const newBook = { ...formData, id: Date.now() };
+        const newBook = new FormData(); // Usar FormData para incluir el archivo
+        for (const key in formData) {
+            newBook.append(key, formData[key]);
+        }
 
         try {
             const response = await fetch('http://localhost:3000/libro', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(newBook),
+                body: newBook, // Enviar FormData
             });
 
             if (response.ok) {
@@ -82,7 +83,8 @@ const CargarLibros = () => {
                     publication_year: "", 
                     copy_number: "", 
                     origin: "", 
-                    classroom_library_id: "" 
+                    classroom_library_id: "", 
+                    portada: null // Restablecer el archivo
                 });
             } else {
                 console.error("Error al registrar el libro:", response.statusText);
@@ -187,7 +189,19 @@ const CargarLibros = () => {
                             required 
                         />
                     </div>
-                    
+
+                    <div>
+                        <label htmlFor="portada">Portada:</label>
+                        <input 
+                            type="file" 
+                            id="portada" 
+                            name="portada" 
+                            accept="image/*" // Aceptar solo imágenes
+                            onChange={handleChange} 
+                            required 
+                        />
+                    </div>
+
                     <BotonIngresar texto="Registrar" />
                 </form>
 
