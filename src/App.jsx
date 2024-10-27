@@ -17,8 +17,8 @@ import LibroDetalles from './LibroDetalles.jsx';
 import CargarLibros from './cargaLibros.jsx';
 import BookForm from './BookForm.jsx';
 import { initialBooks } from "./mocks/books";
-
 import './App.css';
+import CrearBiblioteca from './CrearBiblioteca.jsx';
 
 function App() {
   const [bookArray, setBookArray] = useState(initialBooks);
@@ -53,6 +53,8 @@ function App() {
           <Route path="/libro/:id" element={<LibroDetalles />} />
           {/* Se le pasa por props la funcion para agregar un libro */}
           <Route path="/cargarlibros" element={<CargarLibros addBook={addBook} />} />
+          <Route path="/tresbotones" element={<tresbotones />} />
+          <Route path="/CrearBiblioteca" element={<CrearBiblioteca />} />
 
         </Routes>
       </div>
