@@ -17,11 +17,16 @@ import LibroDetalles from './LibroDetalles.jsx';
 import CargarLibros from './cargaLibros.jsx';
 import BookForm from './BookForm.jsx';
 import { initialBooks } from "./mocks/books";
+<<<<<<< HEAD
+=======
+import ListadoAulas from "./ListadoAulas.jsx";
+import Home from './Home.jsx';
+
+>>>>>>> d0b222393d80d3bb77cbc29992b3347462ae42af
 import './App.css';
 import CrearBiblioteca from './CrearBiblioteca.jsx';
 
 function App() {
-  const [bookArray, setBookArray] = useState(initialBooks);
 
   // Función para añadir un libro al array
   // Esta funcion la pasamos por parametro callback y la ejecutamos en la ruta de carga
@@ -33,11 +38,10 @@ function App() {
     <Router>
       <div className='contenedorPrincipal'>
         <Header />
-
+        <Footer />
         <Routes>
           <Route path="/" element={<Bienvenida />} />
           <Route path="/DropdownMenu" element={<DropdownMenu />} />
-          <Route path="/Footer" element={<Footer />} />
           <Route path="/Ingresar" element={<Ingresar />} />
           <Route path="/elecciongrado" element={<EleccionGrado />} />
           <Route path="/numero/:number/:color" element={<NumeroSeleccionado />} />
@@ -49,12 +53,17 @@ function App() {
           {/* Se le pasa por props la funcion para agregar un libro */}
           <Route path="/cargarlibro/" element={<BookForm addBook={addBook} />} />
           {/* Se le pasa por props el array de libros */}
-          <Route path="/listadelibros" element={<ListaDeLibros books={bookArray} />} />
+          <Route path="/listadelibros" element={<ListaDeLibros/>} />
           <Route path="/libro/:id" element={<LibroDetalles />} />
           {/* Se le pasa por props la funcion para agregar un libro */}
           <Route path="/cargarlibros" element={<CargarLibros addBook={addBook} />} />
+<<<<<<< HEAD
           <Route path="/tresbotones" element={<tresbotones />} />
           <Route path="/CrearBiblioteca" element={<CrearBiblioteca />} />
+=======
+          <Route path="/listadoaulas" element={<ListadoAulas />} />
+          <Route path="/home" element={<Home />} />
+>>>>>>> d0b222393d80d3bb77cbc29992b3347462ae42af
 
         </Routes>
       </div>

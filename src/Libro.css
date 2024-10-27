@@ -2,3 +2,26 @@
     text-decoration: none;
     color: inherit; /* Mantiene el color del texto heredado del contenedor */
   }
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: 200px; /* O ajusta según sea necesario */
+    text-align: center;
+}
+
+.libro-portada {
+    max-width: 100%; /* Asegúrate de que la imagen no se desborde */
+    height: auto;    /* Mantiene la proporción de la imagen */
+    margin-bottom: 10px;
+}
+
+.card-title {
+    font-size: 1.2em;
+    margin: 0.5em 0;
+}
+
+.card-author {
+    margin: 0.2em 0;
+}
