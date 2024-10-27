@@ -18,6 +18,7 @@ import CargarLibros from './cargaLibros.jsx';
 import BookForm from './BookForm.jsx';
 import { initialBooks } from "./mocks/books";
 import ListadoAulas from "./ListadoAulas.jsx";
+import Home from './Home.jsx';
 
 import './App.css';
 
@@ -53,6 +54,7 @@ function App() {
           {/* Se le pasa por props la funcion para agregar un libro */}
           <Route path="/cargarlibros" element={<CargarLibros addBook={addBook} />} />
           <Route path="/listadoaulas" element={<ListadoAulas />} />
+          <Route path="/home" element={<Home />} />
 
         </Routes>
       </div>
