@@ -8,7 +8,7 @@ const Header = () => {
             <div className="logo-container">
                 <img src="\logo.png" alt="Logo" className="logo" />
             </div>
-            <h1 className="header-title">Biblioteca Aulica</h1>
+            <h1 className="header-title">Biblioteca Aúlica</h1>
         </header>
     );
 };
