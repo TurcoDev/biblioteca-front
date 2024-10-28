@@ -18,8 +18,11 @@ import CargarLibros from './cargaLibros.jsx';
 import BookForm from './BookForm.jsx';
 import { initialBooks } from "./mocks/books";
 import { UserProvider } from './context/UserContext.jsx';
+import ListadoAulas from "./ListadoAulas.jsx";
+import Home from './Home.jsx';
 
 import './App.css';
+import CrearBiblioteca from './CrearBiblioteca.jsx';
 
 function App() {
 
@@ -54,6 +57,10 @@ function App() {
             <Route path="/libro/:id" element={<LibroDetalles />} />
             {/* Se le pasa por props la funcion para agregar un libro */}
             <Route path="/cargarlibros" element={<CargarLibros addBook={addBook} />} />
+          <Route path="/tresbotones" element={<tresbotones />} />
+          <Route path="/CrearBiblioteca" element={<CrearBiblioteca />} />
+          <Route path="/listadoaulas" element={<ListadoAulas />} />
+          <Route path="/home" element={<Home />} />
           </Routes>
         </UserProvider>
       </div>

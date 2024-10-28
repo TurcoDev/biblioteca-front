@@ -10,15 +10,26 @@ const EleccionGrado = () => {
     const numbers = [1, 2, 3, 4, 5, 6];
     const colors = shuffleArray([
       "blue", "red", "orange", "yellow", "brown", "green",
-    ]).slice(0, numbers.length); // Ensure the number of colors matches the number of circles
+    ]); 
 
-    const newCircles = numbers.map((number, index) => ({
-      number,
-      color: colors[index], // Assign unique colors to each number
-      id: index,
-      top: `${Math.random() * 80}%`,   // Generate random value for top
-      left: `${Math.random() * 80}%`,  // Generate random value for left
-    }));
+    const radius = 250; // Radio del círculo
+    const centerX = 50; // Centro del contenedor (50% en horizontal)
+    const centerY = 50; // Centro del contenedor (50% en vertical)
+    const angleStep = (2 * Math.PI) / numbers.length; // Ángulo entre cada número
+
+    const newCircles = numbers.map((number, index) => {
+      const angle = index * angleStep;
+      const top = `${centerY + radius * Math.sin(angle) / window.innerHeight * 100}%`;
+      const left = `${centerX + radius * Math.cos(angle) / window.innerWidth * 100}%`;
+    
+    return {
+        number,
+        color: colors[index],
+        id: index,
+        top,
+        left,
+      };
+    });
 
     setCircles(newCircles);
   }, []);
