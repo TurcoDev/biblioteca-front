@@ -17,12 +17,10 @@ import LibroDetalles from './LibroDetalles.jsx';
 import CargarLibros from './cargaLibros.jsx';
 import BookForm from './BookForm.jsx';
 import { initialBooks } from "./mocks/books";
-<<<<<<< HEAD
-=======
+import { UserProvider } from './context/UserContext.jsx';
 import ListadoAulas from "./ListadoAulas.jsx";
 import Home from './Home.jsx';
 
->>>>>>> d0b222393d80d3bb77cbc29992b3347462ae42af
 import './App.css';
 import CrearBiblioteca from './CrearBiblioteca.jsx';
 
@@ -39,33 +37,32 @@ function App() {
       <div className='contenedorPrincipal'>
         <Header />
         <Footer />
-        <Routes>
-          <Route path="/" element={<Bienvenida />} />
-          <Route path="/DropdownMenu" element={<DropdownMenu />} />
-          <Route path="/Ingresar" element={<Ingresar />} />
-          <Route path="/elecciongrado" element={<EleccionGrado />} />
-          <Route path="/numero/:number/:color" element={<NumeroSeleccionado />} />
-          <Route path="/iniciarsesion" element={<IniciarSesion />} />
-          <Route path="/registrousuario" element={<RegistroUsuario />} />
-          <Route path="/registrocorreo" element={<RegistroCorreo />} />
-          <Route path="/tarjetadeingreso/:color" element={<TarjetaDeIngreso />} />
-          <Route path="/crearsesionmayores/:number/:color" element={<CrearSesionMayores />} />
-          {/* Se le pasa por props la funcion para agregar un libro */}
-          <Route path="/cargarlibro/" element={<BookForm addBook={addBook} />} />
-          {/* Se le pasa por props el array de libros */}
-          <Route path="/listadelibros" element={<ListaDeLibros/>} />
-          <Route path="/libro/:id" element={<LibroDetalles />} />
-          {/* Se le pasa por props la funcion para agregar un libro */}
-          <Route path="/cargarlibros" element={<CargarLibros addBook={addBook} />} />
-<<<<<<< HEAD
+        {/* El UserProvider se usa para proveer el estado de usuario al resto de componentes. */}
+        <UserProvider>
+          <Routes>
+            <Route path="/" element={<Bienvenida />} />
+            <Route path="/DropdownMenu" element={<DropdownMenu />} />
+            <Route path="/Ingresar" element={<Ingresar />} />
+            <Route path="/elecciongrado" element={<EleccionGrado />} />
+            <Route path="/numero/:number/:color" element={<NumeroSeleccionado />} />
+            <Route path="/iniciarsesion" element={<IniciarSesion />} />
+            <Route path="/registrousuario" element={<RegistroUsuario />} />
+            <Route path="/registrocorreo" element={<RegistroCorreo />} />
+            <Route path="/tarjetadeingreso/:color" element={<TarjetaDeIngreso />} />
+            <Route path="/crearsesionmayores/:number/:color" element={<CrearSesionMayores />} />
+            {/* Se le pasa por props la funcion para agregar un libro */}
+            <Route path="/cargarlibro/" element={<BookForm addBook={addBook} />} />
+            {/* Se le pasa por props el array de libros */}
+            <Route path="/listadelibros" element={<ListaDeLibros/>} />
+            <Route path="/libro/:id" element={<LibroDetalles />} />
+            {/* Se le pasa por props la funcion para agregar un libro */}
+            <Route path="/cargarlibros" element={<CargarLibros addBook={addBook} />} />
           <Route path="/tresbotones" element={<tresbotones />} />
           <Route path="/CrearBiblioteca" element={<CrearBiblioteca />} />
-=======
           <Route path="/listadoaulas" element={<ListadoAulas />} />
           <Route path="/home" element={<Home />} />
->>>>>>> d0b222393d80d3bb77cbc29992b3347462ae42af
-
-        </Routes>
+          </Routes>
+        </UserProvider>
       </div>
     </Router>
   );
