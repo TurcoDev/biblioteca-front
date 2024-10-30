@@ -4,8 +4,8 @@
     align-items: center;
     border-radius: 20px; /* Bordes más redondeados */
     justify-content: center;
-    height: 90vh; /* Ajusta a la altura deseada */
-    width: 50%; /* Ajusta el ancho del contenedor según sea necesario */
+    height: 70vh; /* Ajusta a la altura deseada */
+    width: 500px; /* Ajusta el ancho del contenedor según sea necesario */
     background-color: rgba(228, 222, 222, 0.8);
     font-family: Arial, sans-serif;
     position: relative;
