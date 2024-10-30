@@ -16,7 +16,7 @@ import ListaDeLibros from './ListaDeLibros.jsx';
 import LibroDetalles from './LibroDetalles.jsx';
 import CargarLibros from './cargaLibros.jsx';
 import { UserProvider } from './context/UserContext.jsx';
-import TresBotones from './MenuOpciones.jsx'
+import MenuOpciones from './menuOpciones.jsx'
 import ListadoAulas from "./ListadoAulas.jsx";
 import Home from './Home.jsx';
 
@@ -46,7 +46,7 @@ function App() {
             <Route path="/listadelibros" element={<ListaDeLibros/>} />
             <Route path="/cargarlibros" element={<CargarLibros/>} />
             <Route path="/libro/:id" element={<LibroDetalles />} />
-            <Route path="/tresbotones" element={<TresBotones />} />
+            <Route path="/menuopciones" element={<MenuOpciones />} />
             <Route path="/CrearBiblioteca" element={<CrearBiblioteca />} />
             <Route path="/listadoaulas" element={<ListadoAulas />} />
             <Route path="/home" element={<Home />} />
