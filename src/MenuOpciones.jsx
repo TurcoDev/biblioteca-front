@@ -8,7 +8,7 @@ import BotonIngresar from './BotonIngresar.jsx';
 
 function LibraryButtons() {
   return (
-    <div className="library-container">
+    <div className="Menucontainer">
       <div className="button-container">
         <div className="library-button">
           <h3>Mis Préstamos</h3>
@@ -16,7 +16,7 @@ function LibraryButtons() {
         </div>
         <div className="library-button">
           <h3>Ver Todos los Libros</h3>
-          <Link to="/listadelibros">
+          <Link to="/listadelibros" style={{ textDecoration: 'none' }}>
               <BotonIngresar texto="Ver Libros" type="submit" />
           </Link>
         </div>
