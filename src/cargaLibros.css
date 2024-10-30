@@ -8,8 +8,8 @@
     border-radius: 20px; /* Bordes más redondeados */
     background-color: #ebe7e7; /* Color de fondo */
     padding: 40px; /* Aumenta el espacio interior para más altura */
-    width: 50%; /* Ancho del contenedor ajustable */
-    max-width: 600px; /* Ancho máximo del contenedor aumentado */
+    width: 70%; /* Ancho del contenedor ajustable */
+    max-width: 1200px; /* Ancho máximo del contenedor aumentado */
     margin: 90px auto; /* Centra el contenedor y añade margen superior */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
 }
@@ -24,13 +24,19 @@
 
 /* El formulario ocupará el 60% del ancho */
 .formulario {
-    width: 70%;
+    width: 90%;
 }
 
 /* El contenedor de la imagen ocupará el 40% */
 .selectBiblioteca{
     padding: 10px;
     border-radius: 5px;
-    width: 70vh;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.selectOrigen{
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
     margin-bottom: 10px;
 }

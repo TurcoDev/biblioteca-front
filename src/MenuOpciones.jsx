@@ -1,5 +1,5 @@
 import React from 'react';
-import './tresbotones.css'; // Asegúrate de que este archivo tenga los estilos adecuados
+import './MenuOpciones.css'; // Asegúrate de que este archivo tenga los estilos adecuados
 import BotonIngresar from './BotonIngresar.jsx';
 //import './Biblioteca.jsx'; 
 //import './Biblioteca.css';

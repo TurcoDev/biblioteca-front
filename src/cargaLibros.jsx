@@ -180,15 +180,18 @@ const CargarLibros = () => {
 
                     <div>
                         <label htmlFor="origin">Origen (Compra/Donación):</label>
-                        <input 
-                            type="text" 
+                        <select className='selectOrigen'
                             id="origin" 
                             name="origin" 
-                            value={formData.origin}
+                            value={formData.origin} 
                             onChange={handleChange} 
-                            required 
-                        />
-                    </div>
+                            required
+                        >
+                            <option value="">Seleccione una opción</option> {/* Opción predeterminada */}
+                            <option value="compra">Compra</option>
+                            <option value="donación">Donación</option>
+                        </select>
+                        </div>
 
                     <div>
                         <label htmlFor="portada">Portada:</label>

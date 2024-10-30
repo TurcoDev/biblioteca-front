@@ -15,9 +15,8 @@ import DropdownMenu from './PerfilAdulto.jsx';
 import ListaDeLibros from './ListaDeLibros.jsx';
 import LibroDetalles from './LibroDetalles.jsx';
 import CargarLibros from './cargaLibros.jsx';
-import BookForm from './BookForm.jsx';
-import { initialBooks } from "./mocks/books";
 import { UserProvider } from './context/UserContext.jsx';
+import TresBotones from './MenuOpciones.jsx'
 import ListadoAulas from "./ListadoAulas.jsx";
 import Home from './Home.jsx';
 
@@ -26,18 +25,12 @@ import CrearBiblioteca from './CrearBiblioteca.jsx';
 
 function App() {
 
-  // Función para añadir un libro al array
-  // Esta funcion la pasamos por parametro callback y la ejecutamos en la ruta de carga
-  const addBook = (newBook) => {
-    setBookArray([...bookArray, newBook]);
-  };
 
   return (
     <Router>
       <div className='contenedorPrincipal'>
         <Header />
-        <Footer />
-        {/* El UserProvider se usa para proveer el estado de usuario al resto de componentes. */}
+
         <UserProvider>
           <Routes>
             <Route path="/" element={<Bienvenida />} />
@@ -50,19 +43,16 @@ function App() {
             <Route path="/registrocorreo" element={<RegistroCorreo />} />
             <Route path="/tarjetadeingreso/:color" element={<TarjetaDeIngreso />} />
             <Route path="/crearsesionmayores/:number/:color/:role" element={<CrearSesionMayores />} />
-            {/* Se le pasa por props la funcion para agregar un libro */}
-            <Route path="/cargarlibro/" element={<BookForm addBook={addBook} />} />
-            {/* Se le pasa por props el array de libros */}
             <Route path="/listadelibros" element={<ListaDeLibros/>} />
+            <Route path="/cargarlibros" element={<CargarLibros/>} />
             <Route path="/libro/:id" element={<LibroDetalles />} />
-            {/* Se le pasa por props la funcion para agregar un libro */}
-            <Route path="/cargarlibros" element={<CargarLibros addBook={addBook} />} />
-          <Route path="/tresbotones" element={<tresbotones />} />
-          <Route path="/CrearBiblioteca" element={<CrearBiblioteca />} />
-          <Route path="/listadoaulas" element={<ListadoAulas />} />
-          <Route path="/home" element={<Home />} />
+            <Route path="/tresbotones" element={<TresBotones />} />
+            <Route path="/CrearBiblioteca" element={<CrearBiblioteca />} />
+            <Route path="/listadoaulas" element={<ListadoAulas />} />
+            <Route path="/home" element={<Home />} />
           </Routes>
         </UserProvider>
+        <Footer />
       </div>
     </Router>
   );

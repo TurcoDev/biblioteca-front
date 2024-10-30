@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import TresBotones from './tresbotones';
+import TresBotones from './MenuOpciones';
 import './Home.css';
 
 

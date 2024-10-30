@@ -15,8 +15,9 @@ const useRegister = ( userData ) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(userData),
+      
     };
-    
+    console.log(userData)
     const fetchRequest = async (url) => {
       
       try {

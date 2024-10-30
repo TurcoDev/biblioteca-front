@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     width: 100%; /* Ocupa todo el ancho de la pantalla */
-    padding: 30px; /* Aumenta el padding para que el footer sea más alto */
+    padding: 20px; /* Aumenta el padding para que el footer sea más alto */
     background-color: rgba(248, 248, 248, 0.8); /* Fondo semitransparente similar al header */
     border-top: 2px solid #ddd; /* Línea superior para el footer */
     position: fixed; /* Fija el footer en la parte inferior de la página */
