@@ -1,38 +1,44 @@
-.detalle-container {
-    display: flex;
+
+.card-container {
     padding: 20px;
-    gap: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    margin-top: 40px;
 }
   
-.detalle-img {
-    width: 250px;
-    height: 350px;
+.card-list {
+    margin-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
+}
+
+  .card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 200px; /* Ancho fijo de las tarjetas */
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  
+.card:hover {
+    transform: scale(1.05); 
+}
+  
+.card-img {
+    width: 100%;
+    height: 250px;
     object-fit: cover;
-    border-radius: 8px;
 }
   
-.detalle-info {
-    flex: 1;
+
+.card-content {
+    padding: 15px;
 }
   
-.detalle-title {
-    font-size: 24px;
+.card-title {
+    font-size: 18px;
     margin: 0;
-    color: #333;
 }
+
   
-.detalle-author,
-.detalle-isbn,
-.detalle-year,
-.detalle-description {
-    font-size: 16px;
-    color: #555;
-    margin: 10px 0;
-}
-  
-.detalle-description {
-    font-size: 14px;
-}
