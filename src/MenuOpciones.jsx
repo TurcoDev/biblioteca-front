@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import './MenuOpciones.css'; // Asegúrate de que este archivo tenga los estilos adecuados
 import BotonIngresar from './BotonIngresar.jsx';
 //import './Biblioteca.jsx'; 
@@ -15,7 +16,9 @@ function LibraryButtons() {
         </div>
         <div className="library-button">
           <h3>Ver Todos los Libros</h3>
-          <BotonIngresar texto="Ver Libros" type="submit" />
+          <Link to="/listadelibros">
+              <BotonIngresar texto="Ver Libros" type="submit" />
+          </Link>
         </div>
         <div className="library-button">
           <h3>Mis Recomendaciones</h3>
