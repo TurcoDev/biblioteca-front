@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Libro from './Libro';
 import './ListaDeLibros.css';
+import BotonIngresar from "./BotonIngresar";
 
 function ListaDeLibros() {
   const [books, setBooks] = useState([]);
@@ -15,14 +16,20 @@ function ListaDeLibros() {
 
   return (
     <div className="card-container">
-      <Link to="/cargarlibros">
-        <button>Regresar a la carga</button>
-      </Link>
+
+    
+
       <div className="card-list">
         {books.map((libro) => (
           <Libro key={libro.book_id} libro={libro} />
         ))}
       </div>
+
+      <div>
+        <Link to="/menuopciones" style={{ textDecoration: 'none'}}>
+          <BotonIngresar texto="Volver al menu" type="submit" color={'grey'} />
+        </Link>
+      </div>   
     </div>
   );
 }
