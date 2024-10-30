@@ -18,13 +18,12 @@ const useRegister = ( userData ) => {
     };
     
     const fetchRequest = async (url) => {
-      console.log('userData', userData);
       
       try {
         const response = await fetch(url, options);
-        console.log('response', response);
+        //console.log('response', response);
         if( !response.ok ) {
-          throw new Error('Error en la peticion');
+          throw new Error('Ocurrió un error al intentar registrar el usuario');
         }
         return response.json();
 
@@ -40,7 +39,7 @@ const useRegister = ( userData ) => {
     const getRes = async () => {
 
         const res = await fetchRequest( url );
-        console.log( 'res',res );
+        //console.log( 'res',res );
         
         setLoading( false );
 

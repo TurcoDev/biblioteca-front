@@ -7,7 +7,7 @@ import BotonIngresar from './BotonIngresar.jsx'; // Asegúrate de que la importa
 
 export default function CrearSesionMayores() {
   const navigate = useNavigate();
-  const { color } = useParams(); // Obtener el color del parámetro de la URL
+  const { color,role } = useParams(); // Obtener el color y el rol del parámetro de la URL
 
   const { user, setUser } = useContext(UserContext); // user logueado, se obtiene del contexto
   
@@ -43,7 +43,7 @@ export default function CrearSesionMayores() {
   }, [user, err, loading]);
 
   const irARegistro = () => {
-    navigate('/registrousuario');
+    navigate(`/registrousuario/${role}`);
   };
 
   // Decodificar color si contiene caracteres especiales

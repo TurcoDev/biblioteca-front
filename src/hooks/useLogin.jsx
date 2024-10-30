@@ -24,7 +24,7 @@ const useLogin = ( userData ) => {
         const response = await fetch(url, options);
         //console.log('response', response);
         if( !response.ok ) {
-          throw new Error('Error en la peticion');
+          throw new Error('Ocurrió un error al intentar iniciar sesion');
         }
         return response.json();
 

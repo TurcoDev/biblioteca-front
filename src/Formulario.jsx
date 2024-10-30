@@ -16,12 +16,14 @@ import './Formulario.css'; // Importa el archivo CSS
 const initialUser = {
   username: "",
   password_hash: "",
-  email: "noemail2@noemail.com", // datos de prueba, eliminarlos
-  role_id:"1015181606819299329", // id de la tabla roles, datos de prueba, eliminarlos
+  email: "",
+  name: "",
+  last_name: "",
+  role_id:"",
   is_moroso:false
 }
 
-const Formulario = ({ tipo, textoBoton }) => {
+const Formulario = ({ tipo, textoBoton, role }) => {
   const navigate = useNavigate();
   const { color } = useParams(); // Obtener el color del parámetro de la URL
   
@@ -30,6 +32,8 @@ const Formulario = ({ tipo, textoBoton }) => {
   const [usuario, setUsuario] = useState('');
   const [contraseña, setContraseña] = useState('');
   const [correo, setCorreo] = useState('');
+  const [nombre, setNombre] = useState('');
+  const [apellido, setApellido] = useState('');
   const [formData, setFormData] = useState(initialUser);
   const [userToRegister, setUserToRegister] = useState(null); // datos para el registro
   const [isLoading, setIsLoading] = useState(''); // mensaje de cargando
@@ -55,7 +59,9 @@ const Formulario = ({ tipo, textoBoton }) => {
       username: formData.username,
       password_hash: formData.password_hash,
       email: formData.email,
-      role_id: formData.role_id,
+      name: formData.name,
+      last_name: formData.last_name,
+      role_id: role, // se envia al BE el name del rol, en BE se obtiene el id
       is_moroso: formData.is_moroso
     });
 
@@ -71,8 +77,12 @@ const Formulario = ({ tipo, textoBoton }) => {
   // Cambia el estado de isLoading cada vez que cambia el estado de user, err o loading
   useEffect(() => {
     setIsLoading(loading);
-    console.log('user', user);
+    //console.log('user', user);
   }, [user, err, loading]);
+
+  /* useEffect(() => {
+    console.log('role en Formulario', role);
+  }, []) */
 
   return (
     isLoading
@@ -116,12 +126,23 @@ const Formulario = ({ tipo, textoBoton }) => {
                     )}
                     
                       <label htmlFor="nombre">Nombre:</label>
-                      <input type="text" id="nombre" name="nombre" />
+                      <input 
+                        type="text"
+                        id="nombre"
+                        name="name"
+                        value={user?.name}
+                        onChange={handleChange}
+                        />
                     </div>
                     
                     <div>
                       <label htmlFor="apellido">Apellido:</label>
-                      <input type="text" id="apellido" name="apellido" />
+                      <input
+                        type="text"
+                        id="apellido"
+                        name="last_name"
+                        value={user?.last_name}
+                        onChange={handleChange}/>
                     </div>
                     
                 

@@ -5,13 +5,13 @@ import "./EleccionGrado.css";
 const EleccionGrado = () => {
   const [circles, setCircles] = useState([]);
   const navigate = useNavigate();
+  const [role, setRole] = useState("estudiante");
 
   useEffect(() => {
     const numbers = [1, 2, 3, 4, 5, 6];
     const colors = shuffleArray([
       "blue", "red", "orange", "yellow", "brown", "green",
     ]); 
-
     const radius = 250; // Radio del círculo
     const centerX = 50; // Centro del contenedor (50% en horizontal)
     const centerY = 50; // Centro del contenedor (50% en vertical)
@@ -51,7 +51,7 @@ const EleccionGrado = () => {
     if (number >= 1 && number <= 3) {
       navigate(`/numero/${number}/${encodeURIComponent(color)}`);
     } else if (number >= 4 && number <= 6) {
-      navigate(`/crearsesionmayores/${number}/${encodeURIComponent(color)}`);
+      navigate(`/crearsesionmayores/${number}/${encodeURIComponent(color)}/${role}`);
     }
   };
 

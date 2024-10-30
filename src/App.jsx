@@ -46,10 +46,10 @@ function App() {
             <Route path="/elecciongrado" element={<EleccionGrado />} />
             <Route path="/numero/:number/:color" element={<NumeroSeleccionado />} />
             <Route path="/iniciarsesion" element={<IniciarSesion />} />
-            <Route path="/registrousuario" element={<RegistroUsuario />} />
+            <Route path="/registrousuario/:role" element={<RegistroUsuario/>} />
             <Route path="/registrocorreo" element={<RegistroCorreo />} />
             <Route path="/tarjetadeingreso/:color" element={<TarjetaDeIngreso />} />
-            <Route path="/crearsesionmayores/:number/:color" element={<CrearSesionMayores />} />
+            <Route path="/crearsesionmayores/:number/:color/:role" element={<CrearSesionMayores />} />
             {/* Se le pasa por props la funcion para agregar un libro */}
             <Route path="/cargarlibro/" element={<BookForm addBook={addBook} />} />
             {/* Se le pasa por props el array de libros */}
