@@ -7,7 +7,7 @@
     border: 1px solid #333030; /* Borde de color gris oscuro */
     border-radius: 20px; /* Bordes más redondeados */
     background-color: #ebe7e7; /* Color de fondo */
-    padding: 40px; /* Aumenta el espacio interior para más altura */
+    padding: 60px; /* Aumenta el espacio interior para más altura */
     width: 90%; /* Ancho del contenedor ajustable */
     max-width: 1200px; /* Ancho máximo del contenedor aumentado */
     margin: 90px auto; /* Centra el contenedor y añade margen superior */
@@ -29,14 +29,17 @@
 }
 
 /* Estilos para los campos de entrada del formulario */
+
 .formulario input {
-    margin-bottom: 20px; /* Aumenta el espacio inferior entre campos */
-    padding: 15px; /* Aumenta el espacio interior para hacer los campos más altos */
-    width: 100%; /* Ancho completo del contenedor */
+    margin-bottom: 20px; /* Espacio inferior entre campos */
+    padding: 15px; /* Espacio interior para hacer los campos más altos */
+    width: 110%; /* Ancho extendido más allá del contenedor */
+    margin-left: -5%; /* Extiende hacia la izquierda */
+    margin-right: -5%; /* Extiende hacia la derecha */
     box-sizing: border-box; /* Incluye padding y border en el cálculo del ancho total */
     border: 1px solid #ccc; /* Borde de los campos */
-    border-radius: 20px; /* Bordes más redondeados en los campos de entrada */
-    font-size: 1.2em; /* Aumenta el tamaño de la fuente */
+    border-radius: 20px; /* Bordes redondeados en los campos de entrada */
+    font-size: 1.2em; /* Tamaño de la fuente */
 }
 
 /* Estilos para los botones dentro del formulario */
@@ -49,7 +52,7 @@
     display: block; /* Hace que el enlace ocupe una línea completa */
     font-size: 1.3em; /* Aumenta el tamaño del texto */
     text-decoration: none; /* Elimina subrayado */
-    padding: 10px 0; /* Espaciado interior */
+    padding: 3px 0; /* Espaciado interior */
     width: 100%; /* Ancho completo */
 }
 
