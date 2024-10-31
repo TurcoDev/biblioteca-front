@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './PerfilAdulto.css';
-import DropdownButtonCrearAdulto from './CrearUsuarioAdulto';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons'; // Importa el ícono que uso
 import { FaKey } from "react-icons/fa"; // Usa react-icons para el icono de la llave
