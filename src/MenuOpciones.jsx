@@ -11,18 +11,18 @@ function LibraryButtons() {
     <div className="Menucontainer">
       <div className="button-container">
         <div className="library-button">
-          <h3>Mis Préstamos</h3>
-          <BotonIngresar texto="Ver Prestamos" type="submit" />
+          <h3>MIS PRÉSTAMOS</h3>
+          <BotonIngresar texto="VER PRESTAMOS" type="submit" />
         </div>
         <div className="library-button">
-          <h3>Ver Todos los Libros</h3>
+          <h3>VER TODOS LOS LIBROS</h3>
           <Link to="/listadelibros" style={{ textDecoration: 'none' }}>
-              <BotonIngresar texto="Ver Libros" type="submit" />
+              <BotonIngresar texto="VER LIBROS" type="submit" />
           </Link>
         </div>
         <div className="library-button">
-          <h3>Mis Recomendaciones</h3>
-          <BotonIngresar texto="Ver Recomendaciones" type="submit" />
+          <h3>MIS RECOMENDACIONES</h3>
+          <BotonIngresar texto="VER RECOMENDACIONES" type="submit" />
         </div>
       </div>
     </div>
