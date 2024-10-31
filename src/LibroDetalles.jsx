@@ -28,13 +28,38 @@ function LibroDetalles() {
   };
 
   const handleSaveClick = () => {
-    setLibro(editedLibro);
-    setIsEditing(false);
+    fetch(`http://localhost:3000/libro/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(editedLibro)
+    })
+    .then(response => {
+      if (response.ok) {
+        setLibro(editedLibro); // Actualizar el estado local
+        setIsEditing(false); // Salir del modo de edición
+        alert("Libro actualizado correctamente");
+      } else {
+        console.error("Error al actualizar el libro");
+      }
+    })
+    .catch(error => console.error("Error al enviar la solicitud PUT:", error));
   };
 
   const handleDeleteClick = () => {
-    alert('Libro eliminado');
-    navigate('/');
+    fetch(`http://localhost:3000/libro/${id}`, {
+      method: 'DELETE'
+    })
+    .then(response => {
+      if (response.ok) {
+        alert("Libro eliminado");
+        navigate('/'); // Redirige a la página principal
+      } else {
+        console.error("Error al eliminar el libro");
+      }
+    })
+    .catch(error => console.error("Error al enviar la solicitud DELETE:", error));
   };
 
   if (!libro) {
