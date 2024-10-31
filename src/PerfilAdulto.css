@@ -1,24 +1,35 @@
 /* Estilos para el contenedor */
-.dropdown {
-    position: relative;
-    display: inline-block;
-    margin: 0 15px;
+/* Contenedor para centrar y separar los botones */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px; /* Ajusta según sea necesario */
 }
 
-/* Estilos para el botón */
+.dropdown {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px 0; /* Espacio entre botones */
+}
+
 .dropdown-button {
-    background: linear-gradient(135deg, #ffffff, #808080); /* Degradado de blanco a gris */
+    background: linear-gradient(135deg, #ffffff, #808080);
     color: black;
-    padding: 20px 50px; /* Aumenta el padding para que el botón sea más largo */
+    padding: 20px 50px;
     font-size: 20px;
     border: none;
     cursor: pointer;
-    display: flex; /* Utiliza flexbox para alinear el texto, el ícono y la flecha */
+    display: flex;
     align-items: center;
-    justify-content: space-between; /* Asegura que el texto y la flecha estén en los extremos */
-    min-width: 200px; /* Ancho mínimo del botón */
-    position: relative; /* Relativo para flecha */
-    border-radius: 5px; /* Bordes redondeados */
+    justify-content: space-between;
+    min-width: 200px;
+    position: relative;
+    border-radius: 5px;
+    min-width: 250px; /* Ajusta según sea necesario */
+    margin: 10px 0; /* Espacio entre los botones */
 }
 
 /* Estilos para el ícono */
@@ -58,6 +69,7 @@
     border-radius: 4px; /* Bordes redondeados para un mejor diseño */
 }
 
+
 /* Estilos para las opciones dentro del dropdown */
 .dropdown-content a {
     color: black;
@@ -74,3 +86,37 @@
 .dropdown-content a:hover {
     background-color: #ddd; /* Fondo gris claro al pasar el mouse */
 }
+
+
+/* Estilos para el contenedor del dropdown */
+.dropdown-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos en el menú desplegable */
+    justify-content: center; /* Centra los elementos verticalmente */
+    position: absolute;
+    background-color: #f0f0f0; /* Fondo gris claro del contenido */
+    width: 100%; /* Ocupa el mismo ancho que el botón desplegable */
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    margin-top: 5px;
+    border-radius: 4px; /* Bordes redondeados para un mejor diseño */
+  }
+  
+  /* Estilos para el botón del dropdown */
+  .dropdown-button {
+    background-color: transparent; /* Fondo transparente para el botón */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    padding: 10px; /* Espaciado interno */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Estilos para el icono */
+  .dropdown-icon {
+    font-size: 24px; /* Tamaño del icono */
+    color: #333; /* Color del icono */
+  }
+  
