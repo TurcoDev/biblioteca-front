@@ -16,7 +16,7 @@ import ListaDeLibros from './ListaDeLibros.jsx';
 import LibroDetalles from './LibroDetalles.jsx';
 import CargarLibros from './cargaLibros.jsx';
 import { UserProvider } from './context/UserContext.jsx';
-import MenuOpciones from './MenuOpciones.jsx'
+import MenuOpciones  from './MenuOpciones.jsx'
 import ListadoAulas from "./ListadoAulas.jsx";
 import Home from './Home.jsx';
 
