@@ -15,21 +15,20 @@ function ListaDeLibros() {
   }, []);
 
   return (
-    <div className="card-container">
+    <div className="main-content">
+      <div className="card-container">
+        <div className="card-list">
+          {books.map((libro) => (
+            <Libro key={libro.book_id} libro={libro} />
+          ))}
+        </div>
 
-    
-
-      <div className="card-list">
-        {books.map((libro) => (
-          <Libro key={libro.book_id} libro={libro} />
-        ))}
+        <div className="volver-boton">
+          <Link to="/menuopciones" style={{ textDecoration: 'none' }}>
+            <BotonIngresar texto="Volver al menú" type="submit" color={'grey'} />
+          </Link>
+        </div>   
       </div>
-
-      <div>
-        <Link to="/menuopciones" style={{ textDecoration: 'none'}}>
-          <BotonIngresar texto="Volver al menu" type="submit" color={'grey'} />
-        </Link>
-      </div>   
     </div>
   );
 }
