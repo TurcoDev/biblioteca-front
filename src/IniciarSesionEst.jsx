@@ -12,7 +12,7 @@ export default function TarjetaDeIngreso() {
 
   // Function to handle button click
   const handleButtonClick = () => {
-    navigate('/menuopciones'); // Navigate to MenuOpciones page
+    navigate('/home'); // Navigate to MenuOpciones page
   };
 
   return (

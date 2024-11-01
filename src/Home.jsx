@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import TresBotones from './MenuOpciones';
+import LibraryButtons from './MenuOpciones';
 import './Home.css';
 
 
@@ -19,7 +19,7 @@ function Home() {
       </Link>
 
       <div className="button-container">
-        <TresBotones />
+        <LibraryButtons />
       </div>
     </div>
   );
