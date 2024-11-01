@@ -54,12 +54,16 @@ function LibroDetalles() {
     .then(response => {
       if (response.ok) {
         alert("Libro eliminado");
-        navigate('/'); // Redirige a la página principal
+        navigate('/listadelibros'); // Redirige a la lista de libros
       } else {
         console.error("Error al eliminar el libro");
       }
     })
     .catch(error => console.error("Error al enviar la solicitud DELETE:", error));
+  };
+
+  const handleBackClick = () => {
+    navigate('/listadelibros'); // Asegúrate de que esta ruta corresponde a tu componente ListaDeLibros
   };
 
   if (!libro) {
@@ -72,45 +76,62 @@ function LibroDetalles() {
       <div className="detalle-info">
         {isEditing ? (
           <>
-            <input
-              type="text"
-              name="title"
-              value={editedLibro.title}
-              onChange={handleInputChange}
-              className="detalle-title"
-            />
-            <input
-              type="text"
-              name="isbn"
-              value={editedLibro.isbn}
-              onChange={handleInputChange}
-              className="detalle-isbn"
-            />
-            <input
-              type="text"
-              name="publication_year"
-              value={editedLibro.publication_year}
-              onChange={handleInputChange}
-              className="detalle-year"
-            />
-            <textarea
-              name="description"
-              value={editedLibro.description}
-              onChange={handleInputChange}
-              className="detalle-description"
-            />
-            <button onClick={handleSaveClick} className="detalle-button">Guardar</button>
+            <label className="detalle-label">
+              Título:
+              <input
+                type="text"
+                name="title"
+                value={editedLibro.title}
+                onChange={handleInputChange}
+                className="detalle-input"
+              />
+            </label>
+
+            <label className="detalle-label">
+              ISBN:
+              <input
+                type="text"
+                name="isbn"
+                value={editedLibro.isbn}
+                onChange={handleInputChange}
+                className="detalle-input"
+              />
+            </label>
+
+            <label className="detalle-label">
+              Año de Publicación:
+              <input
+                type="text"
+                name="publication_year"
+                value={editedLibro.publication_year}
+                onChange={handleInputChange}
+                className="detalle-input"
+              />
+            </label>
+
+            <label className="detalle-label">
+              Descripción:
+              <textarea
+                name="description"
+                value={editedLibro.description}
+                onChange={handleInputChange}
+                className="detalle-textarea"
+              />
+            </label>
+
+            <button onClick={handleSaveClick} className="detalle-button modify-button">Guardar</button>
           </>
         ) : (
           <>
-           <div className='card1'>
-            <p className="detalle-title"><strong>Título:</strong> {libro.title}</p>
-            <p className="detalle-isbn"><strong>ISBN:</strong> {libro.isbn}</p>
-            <p className="detalle-year"><strong>Año de Publicación:</strong> {libro.publication_year}</p>
-            <p className="detalle-description">{libro.description}</p>
-            <button onClick={handleEditClick} className="detalle-button modify-button">Modificar</button>
-            <button onClick={handleDeleteClick} className="detalle-button delete-button">Eliminar</button>
-           </div>
+            <div className='card1'>
+              <p className="detalle-title"><strong>Título:</strong> {libro.title}</p>
+              <p className="detalle-isbn"><strong>ISBN:</strong> {libro.isbn}</p>
+              <p className="detalle-year"><strong>Año de Publicación:</strong> {libro.publication_year}</p>
+              <p className="detalle-description"><strong>Descripción:</strong> {libro.description}</p>
+              <button onClick={handleEditClick} className="detalle-button modify-button">Modificar</button>
+              <button onClick={handleDeleteClick} className="detalle-button delete-button">Eliminar</button>
+              <button onClick={handleBackClick} className="detalle-button back-button">Volver al Listado</button>
+            </div>
           </>
         )}
       </div>

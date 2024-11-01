@@ -1,90 +1,143 @@
-
-
-/* Distribución en dos columnas del formulario y la imagen */
+/* Contenedor principal */
 .detalle-container {
     font-family: 'Lucida Sans', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid #7e7c7c; /* Borde de color gris oscuro */
-    border-radius: 20px; /* Bordes más redondeados */
-    background-color: rgba(248, 248, 248, 0.8); /* Color de fondo */
-    padding: 25px; /* Aumenta el espacio interior para más altura */
-    width: 100%; /* Ancho del contenedor ajustable */
-    max-width: 1200px; /* Ancho máximo del contenedor aumentado */
-    margin: 80px auto; /* Centra el contenedor y añade margen superior */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    background-color: #ffffff;
+    padding: 30px;
+    width: 100%;
+    max-width: 800px;
+    margin: 80px auto;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.3s ease;
 }
 
+.detalle-container:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen */
+.detalle-img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor de información */
 .detalle-info {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     width: 100%;
     gap: 20px;
-    margin: 10px;
-    font-size: 20px;
+    font-size: 18px;
 }
 
-.detalle-img{
-    width: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Etiquetas de campo */
+.detalle-label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+    font-size: 16px;
 }
 
-.imagen-libro {
-    max-width: 100%;
-    height: auto;
-    border: 1px solid #ccc;
+/* Estilos de input y textarea */
+.detalle-input, .detalle-textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    font-size: 16px;
+    border: 1px solid #d0d0d0;
+    border-radius: 6px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+    outline: none;
 }
 
-.detalle-button{
-    margin: 8px;
-    padding: 8px 16px;
+.detalle-input:focus, .detalle-textarea:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.2);
+}
+
+.detalle-textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+/* Botones */
+.detalle-button {
+    padding: 10px 20px;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 24px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s;
+    margin: 10px 0;
 }
 
 .detalle-button.modify-button {
-    background-color: #4CAF50;
+    background-color: #4a90e2;
     color: #fff;
 }
 
 .detalle-button.delete-button {
-    background-color: #f44336;
+    background-color: #e74c3c;
     color: #fff;
 }
+
 .detalle-button:hover {
-    transform: scale(1.05); 
+    transform: translateY(-2px);
 }
 
-.card-container {
-    padding: 20px;
-}
-  
-.card-list {
-    margin-top: 60px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px; 
+.detalle-button.modify-button:hover {
+    background-color: #357abd;
 }
 
-  .card1 {
-    background: #e4e2e2;
-    border: 1px solid #ddd;
+.detalle-button.delete-button:hover {
+    background-color: #c0392b;
+}
+
+/* Tarjeta de contenido (modo visualización) */
+.card1 {
+    background: #f9f9f9;
+    border: 1px solid #e0e0e0;
     border-radius: 8px;
+    padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    width: 100%; /* Ancho fijo de las tarjetas */
-    text-align: center;
-    transition: transform 0.2s;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 100%;
+    text-align: left;
+}
+
+.card1:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Texto del campo */
+.card1 p {
+    margin: 8px 0;
+    font-size: 18px;
+    color: #444;
+}
+
+.card1 p strong {
+    font-weight: 600;
+    color: #333;
+}
+
+.detalle-button.back-button {
+    background-color: #6c757d; /* Color gris */
+    color: #fff;
+    margin-left: 8px;
   }
   
-.card1:hover {
-    transform: scale(1.05); 
-}
-  
-
+  .detalle-button.back-button:hover {
+    transform: scale(1.05);
+  }
   
