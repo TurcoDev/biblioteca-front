@@ -3,7 +3,8 @@
     font-family: 'Lucida Sans', sans-serif;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
     border: 1px solid #e0e0e0;
     border-radius: 12px;
     background-color: #ffffff;
@@ -22,7 +23,7 @@
 /* Imagen */
 .detalle-img {
     width: 100%;
-    max-width: 250px;
+    max-width: 300px; /* Aumentar el tamaño máximo de la imagen */
     border-radius: 8px;
     margin-bottom: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -32,6 +33,7 @@
 .detalle-info {
     display: flex;
     flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
     width: 100%;
     gap: 20px;
     font-size: 18px;
@@ -77,9 +79,11 @@
     font-size: 18px;
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.2s;
-    margin: 10px 0;
+    margin: 10px 5px; /* Aumenta el margen lateral para separación */
+    flex: 1; /* Hace que los botones ocupen el mismo espacio */
 }
 
+/* Botones específicos */
 .detalle-button.modify-button {
     background-color: #4a90e2;
     color: #fff;
@@ -102,21 +106,12 @@
     background-color: #c0392b;
 }
 
-/* Tarjeta de contenido (modo visualización) */
-.card1 {
-    background: #f9f9f9;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    width: 100%;
-    text-align: left;
-}
-
-.card1:hover {
-    transform: scale(1.02);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+/* Contenedor de botones */
+.volver-boton {
+    display: flex; /* Usar flexbox para alinear los botones horizontalmente */
+    justify-content: center; /* Centra los botones horizontalmente */
+    width: 100%; /* Ocupa el 100% del ancho */
+    margin-top: 20px; /* Espaciado superior */
 }
 
 /* Texto del campo */
@@ -131,13 +126,12 @@
     color: #333;
 }
 
+/* Botón de volver */
 .detalle-button.back-button {
     background-color: #6c757d; /* Color gris */
     color: #fff;
-    margin-left: 8px;
-  }
-  
-  .detalle-button.back-button:hover {
+}
+
+.detalle-button.back-button:hover {
     transform: scale(1.05);
-  }
-  
+}
