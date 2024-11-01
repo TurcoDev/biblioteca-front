@@ -43,7 +43,7 @@ function LibroDetalles() {
 
   return (
     <div className="detalle-container">
-      <img src={libro.portada} alt={libro.title} className="detalle-img" />
+      <img src={libro.portada} alt={libro.title} className="detalle-img imagen-libro" />
       <div className="detalle-info">
         {isEditing ? (
           <>
@@ -78,12 +78,14 @@ function LibroDetalles() {
           </>
         ) : (
           <>
-            <p className="detalle-title">Título: {libro.title}</p>
-            <p className="detalle-isbn">ISBN: {libro.isbn}</p>
-            <p className="detalle-year">Año de Publicación: {libro.publication_year}</p>
+           <div className='card1'>
+            <p className="detalle-title"><strong>Título:</strong> {libro.title}</p>
+            <p className="detalle-isbn"><strong>ISBN:</strong> {libro.isbn}</p>
+            <p className="detalle-year"><strong>Año de Publicación:</strong> {libro.publication_year}</p>
             <p className="detalle-description">{libro.description}</p>
-            <button onClick={handleEditClick} className="detalle-button">Modificar</button>
+            <button onClick={handleEditClick} className="detalle-button modify-button">Modificar</button>
             <button onClick={handleDeleteClick} className="detalle-button delete-button">Eliminar</button>
+           </div>
           </>
         )}
       </div>
