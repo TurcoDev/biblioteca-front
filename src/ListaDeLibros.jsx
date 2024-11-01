@@ -27,6 +27,9 @@ function ListaDeLibros() {
           <Link to="/menuopciones" style={{ textDecoration: 'none' }}>
             <BotonIngresar texto="Volver al menú" type="submit" color={'grey'} />
           </Link>
+          <Link to="/cargarlibros" style={{ textDecoration: 'none' }}>
+            <BotonIngresar texto="Cargar libros" type="submit" color={'grey'} />
+          </Link>
         </div>   
       </div>
     </div>
