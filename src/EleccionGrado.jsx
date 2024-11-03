@@ -51,7 +51,7 @@ const EleccionGrado = () => {
     if (number >= 1 && number <= 3) {
       navigate(`/numero/${number}/${encodeURIComponent(color)}`);
     } else if (number >= 4 && number <= 6) {
-      navigate(`/crearsesionmayores/${number}/${encodeURIComponent(color)}/${role}`);
+      navigate(`/CrearSesionEst2C/${number}/${encodeURIComponent(color)}/${role}`);
     }
   };
 

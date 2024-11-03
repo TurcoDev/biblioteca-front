@@ -6,10 +6,11 @@ import Ingresar from './Ingresar.jsx';
 import Bienvenida from './Bienvenida';
 import EleccionGrado from "./EleccionGrado";
 import NumeroSeleccionado from "./NumeroSeleccionado";
-import IniciarSesion from './IniciarSesion';
+import IniciarSesion from './IniciarSesionEst2C.jsx';
 import RegistroUsuario from './RegistroUsuario';
 import RegistroCorreo from './RegistroCorreo';
-import TarjetaDeIngreso from './IniciarSesionEst';
+import TarjetaDeIngreso from './IniciarSesionEst1C';
+import CrearSesionEst2C from './IniciarSesionEst2C.jsx';
 import CrearSesionMayores from './IniciarSesionMayores';
 import DropdownMenu from './PerfilAdulto.jsx';
 import ListaDeLibros from './ListaDeLibros.jsx';
@@ -43,6 +44,7 @@ function App() {
             <Route path="/registrocorreo" element={<RegistroCorreo />} />
             <Route path="/tarjetadeingreso/:color" element={<TarjetaDeIngreso />} />
             <Route path="/crearsesionmayores/:number/:color/:role" element={<CrearSesionMayores />} />
+            <Route path="/CrearSesionEst2C/:number/:color/:role" element={<CrearSesionEst2C />} />
             <Route path="/listadelibros" element={<ListaDeLibros/>} />
             <Route path="/cargarlibros" element={<CargarLibros/>} />
             <Route path="/libro/:id" element={<LibroDetalles />} />

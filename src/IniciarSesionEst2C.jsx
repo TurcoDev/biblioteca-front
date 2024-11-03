@@ -5,7 +5,7 @@ import { UserContext } from './context/UserContext.jsx'; // contexto del usuario
 import './IniciarSesionEst2C.css';
 import BotonIngresar from './BotonIngresar.jsx'; // Asegúrate de que la importación es correcta
 
-export default function CrearSesionMayores() {
+export default function CrearSesionEst2C() {
   const navigate = useNavigate();
   const { color,role } = useParams(); // Obtener el color y el rol del parámetro de la URL
 
@@ -68,6 +68,7 @@ export default function CrearSesionMayores() {
                     <input
                       type='text'
                       id='usuario'
+                      name = 'usuario'
                       value={usuario}
                       placeholder="Ingrese usuario"
                       onChange={(e) => setUsuario(e.target.value)}
@@ -77,6 +78,7 @@ export default function CrearSesionMayores() {
                     <input
                       type='password'
                       id='contraseña'
+                      name='contraseña'
                       value={contraseña}
                       placeholder="Ingrese contraseña"
                       onChange={(e) => setContraseña(e.target.value)}
@@ -89,7 +91,7 @@ export default function CrearSesionMayores() {
 
                   <a href='#'>Olvidé mi contraseña</a>
 
-                  <a href='#' onClick={irARegistro}>Si no tenés cuenta. ¡Registrate!</a>
+                  <p>Si no tenés cuenta creala con tu docente</p> 
                 </div>
           )
       )

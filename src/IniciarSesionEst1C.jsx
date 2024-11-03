@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
-import './IniciarSesionEst.css';
+import './IniciarSesionEst1C.css';
 import BotonIngresar from './BotonIngresar.jsx';
 
 export default function TarjetaDeIngreso() {
