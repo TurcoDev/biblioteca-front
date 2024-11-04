@@ -34,8 +34,8 @@
   }
   
   .sidebar-button {
-    background-color: #fff;
-    border: 1px solid #ccc;
+    background-color: #eb7272;
+    border: 1px solid #eb7272;
     border-radius: 8px;
     padding: 10px;
     font-size: 14px;
@@ -51,3 +51,5 @@
     display: flex;
     justify-content: center;
   }
+
+  

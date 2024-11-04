@@ -19,7 +19,7 @@ function Home() {
       </div>
       
       <div>
-        <button className="sidebar-button" onClick={toggleAula}>Mi biblioteca aúlica</button>
+        <button className="sidebar-button"  onClick={toggleAula} >Mi biblioteca áulica</button>
         {mostrarAula && <MiAula />}
       </div>
 

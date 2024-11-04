@@ -45,9 +45,9 @@ function CrearBiblioteca() {
   return (
     <div className="app-container">
       <div className="library-container">
-        <h1>Biblioteca Áulica</h1>
+    
         <div className="form-container">
-          <p>Creá tu biblioteca áulica</p>
+          <p>CREÁ TU BIBLIOTECA ÁULICA</p>
           <form onSubmit={handleSubmit}>
             <input className='nombreBiblioteca'
               type="text"
