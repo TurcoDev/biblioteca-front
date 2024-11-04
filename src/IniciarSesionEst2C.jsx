@@ -4,6 +4,7 @@ import useLogin from './hooks/useLogin.jsx'; // custom hook que maneja el inicio
 import { UserContext } from './context/UserContext.jsx'; // contexto del usuario
 import './IniciarSesionEst2C.css';
 import BotonIngresar from './BotonIngresar.jsx'; // Asegúrate de que la importación es correcta
+import Home from './Home.jsx';
 
 export default function CrearSesionEst2C() {
   const navigate = useNavigate();
@@ -26,7 +27,7 @@ export default function CrearSesionEst2C() {
     // arma el objeto con los datos para el login
     setUserToLogin({
       username: usuario,
-      password_hash: contraseña
+      password_hash: contraseña,
     });
 
     //limpia los campos del formulario
@@ -55,7 +56,7 @@ export default function CrearSesionEst2C() {
       : (err
           ? <h2>{err}</h2>
           : (user
-              ? <h2>Bienvenid@ {user.username}</h2>
+              ? <Home />
               : <div className='formulario-contenedor' style={{ width: '80%', maxWidth: '600px' }}>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" id="user" className="logo">
                     <path fill={decodedColor} d="M31.64,27.72a13.94,13.94,0,0,1-15.28,0A18,18,0,0,0,6.05,42.94a1,1,0,0,0,.27.75,1,1,0,0,0,.73.31H41a1,1,0,0,0,.73-.31,1,1,0,0,0,.27-.75A18,18,0,0,0,31.64,27.72Z" className="color42c3cf svgShape"></path>
@@ -91,7 +92,7 @@ export default function CrearSesionEst2C() {
 
                   <a href='#'>Olvidé mi contraseña</a>
 
-                  <p>Si no tenés cuenta creala con tu docente</p> 
+                  <a href='#' onClick={irARegistro}>Si no tenés cuenta. Registrate</a>
                 </div>
           )
       )
