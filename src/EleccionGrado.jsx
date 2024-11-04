@@ -49,7 +49,7 @@ const EleccionGrado = () => {
 
   const handleCircleClick = (number, color) => {
     if (number >= 1 && number <= 3) {
-      navigate(`/numero/${number}/${encodeURIComponent(color)}`);
+      navigate(`/CrearSesionEst1C/${number}/${encodeURIComponent(color)}/${role}`);
     } else if (number >= 4 && number <= 6) {
       navigate(`/CrearSesionEst2C/${number}/${encodeURIComponent(color)}/${role}`);
     }
