@@ -9,7 +9,7 @@ import NumeroSeleccionado from "./NumeroSeleccionado";
 import IniciarSesion from './IniciarSesionEst2C.jsx';
 import RegistroUsuario from './RegistroUsuario';
 import RegistroCorreo from './RegistroCorreo';
-import TarjetaDeIngreso from './IniciarSesionEst1C';
+import CrearSesionEst1C from './IniciarSesionEst1C.jsx';
 import CrearSesionEst2C from './IniciarSesionEst2C.jsx';
 import CrearSesionMayores from './IniciarSesionMayores';
 import DropdownMenu from './PerfilAdulto.jsx';
@@ -42,9 +42,9 @@ function App() {
             <Route path="/iniciarsesion" element={<IniciarSesion />} />
             <Route path="/registrousuario/:role" element={<RegistroUsuario/>} />
             <Route path="/registrocorreo" element={<RegistroCorreo />} />
-            <Route path="/tarjetadeingreso/:color" element={<TarjetaDeIngreso />} />
             <Route path="/crearsesionmayores/:number/:color/:role" element={<CrearSesionMayores />} />
             <Route path="/CrearSesionEst2C/:number/:color/:role" element={<CrearSesionEst2C />} />
+            <Route path="/CrearSesionEst1C/:number/:color/:role" element={<CrearSesionEst1C />} />
             <Route path="/listadelibros" element={<ListaDeLibros/>} />
             <Route path="/cargarlibros" element={<CargarLibros/>} />
             <Route path="/libro/:id" element={<LibroDetalles />} />
