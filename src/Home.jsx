@@ -1,26 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
-import LibraryButtons from './MenuOpciones';
 import './Home.css';
+import MiAula from './MiAula.jsx'; 
 
 
 function Home() {
+  const [mostrarAula, setMostrarAula] = useState(false);
+
+  const toggleAula = () => {
+    setMostrarAula(!mostrarAula);
+  };
+
   return (
     <div className="home-container">
       <div className="search-bar">
         <input type="text" placeholder="Buscar un libro en la biblioteca..." />
         <button className="search-icon">&#128269;</button> {/* icono de lupa */}
       </div>
-
-      <Link to="/listadoaulas">
-            <button className="sidebar-button">
-                Mi biblioteca áulica
-            </button>
-      </Link>
-
-      <div className="button-container">
-        <LibraryButtons />
+      
+      <div>
+        <button className="sidebar-button" onClick={toggleAula}>Mi biblioteca aúlica</button>
+        {mostrarAula && <MiAula />}
       </div>
+
+
     </div>
   );
 }
