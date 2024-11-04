@@ -1,0 +1,10 @@
+.miAula {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  
+  .miAula.mostrar {
+    max-height: 500px; /* Ajusta según el contenido */
+  }
+  
