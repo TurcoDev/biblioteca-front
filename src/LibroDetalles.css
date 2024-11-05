@@ -135,3 +135,7 @@
 .detalle-button.back-button:hover {
     transform: scale(1.05);
 }
+.containerModificarBotones{
+    display: flex;
+    flex-direction: row;
+}
