@@ -25,10 +25,10 @@ function ListaDeLibros() {
 
         <div className="volver-boton">
           <Link to="/home" style={{ textDecoration: 'none' }}>
-            <BotonIngresar texto="Volver al menú" type="submit" color={'grey'} />
+            <BotonIngresar texto="Volver al menú" type="submit" style="background-color: rgb (235,62,62)" />
           </Link>
           <Link to="/cargarlibros" style={{ textDecoration: 'none' }}>
-            <BotonIngresar texto="Cargar libros" type="submit" color={'grey'} />
+            <BotonIngresar texto="Cargar libros" type="submit" style="background-color: rgb (235,62,62)" />
           </Link>
         </div>   
       </div>

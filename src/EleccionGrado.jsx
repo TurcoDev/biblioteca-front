@@ -64,7 +64,7 @@ const EleccionGrado = () => {
 
   return (
     <div className="eleccion-grado-container">
-      <h1>¿A QUÉ GRADO VOY?</h1>
+      <h1>¿A QUÉ GRADO VAS?</h1>
       <div className="circles-container">
         {circles.map((circle) => (
           <div
