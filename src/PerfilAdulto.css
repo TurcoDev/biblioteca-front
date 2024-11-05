@@ -1,10 +1,9 @@
-/* Estilos para el contenedor */
-/* Contenedor para centrar y separar los botones */
+/* Estilos generales */
 .button-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px; /* Ajusta según sea necesario */
+    margin-top: 20px;
 }
 
 .dropdown {
@@ -12,7 +11,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 15px 0; /* Espacio entre botones */
+    margin: 15px 0;
 }
 
 .dropdown-button {
@@ -25,98 +24,58 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-width: 200px;
-    position: relative;
     border-radius: 5px;
-    min-width: 250px; /* Ajusta según sea necesario */
-    margin: 10px 0; /* Espacio entre los botones */
+    min-width: 250px;
+    margin: 10px 0;
 }
 
-/* Estilos para el ícono */
 .icon {
-    margin-right: 10px; /* Espacio entre el ícono y el texto */
-    color: red; /* Cambia el color del ícono a rojo */
+    margin-right: 10px;
+    color: red;
 }
 
-/* Estilos para la flecha */
 .arrow {
-    margin-left: 10px; /* Espacio entre el texto y la flecha */
-    border: solid white; /* Color de la flecha */
-    border-width: 0 2px 2px 0; /* Forma de la flecha */
+    margin-left: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
     display: inline-block;
     padding: 5px;
-    transform: rotate(45deg); /* Rotación inicial para la flecha hacia abajo */
-    transition: transform 0.3s ease; /* Transición suave al abrir/cerrar */
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
 }
 
-/* Cambia la dirección de la flecha cuando el dropdown está abierto */
 .arrow.up {
-    transform: rotate(-135deg); /* Rotación para la flecha hacia arriba */
+    transform: rotate(-135deg);
 }
 
-/* Estilos para el contenido del dropdown */
 .dropdown-content {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centra los elementos en el menú desplegable */
-    justify-content: center; /* Centra los elementos verticalmente */
-    position: absolute;
-    background-color: #f0f0f0; /* Fondo gris claro del contenido */
-    width: 100%; /* Ocupa el mismo ancho que el botón desplegable */
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    margin-top: 5px;
-    border-radius: 4px; /* Bordes redondeados para un mejor diseño */
-}
-
-
-/* Estilos para las opciones dentro del dropdown */
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    width: 100%; /* Asegura que las opciones ocupen todo el ancho del menú */
-    text-align: center; /* Centra el texto dentro de cada opción */
-    font-size: 18px;
-    transition: background-color 0.3s ease; /* Transición suave al pasar el ratón */
-}
-
-/* Estilos para las opciones cuando se pasa el mouse por encima */
-.dropdown-content a:hover {
-    background-color: #ddd; /* Fondo gris claro al pasar el mouse */
-}
-
-
-/* Estilos para el contenedor del dropdown */
-.dropdown-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centra los elementos en el menú desplegable */
-    justify-content: center; /* Centra los elementos verticalmente */
-    position: absolute;
-    background-color: #f0f0f0; /* Fondo gris claro del contenido */
-    width: 100%; /* Ocupa el mismo ancho que el botón desplegable */
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    margin-top: 5px;
-    border-radius: 4px; /* Bordes redondeados para un mejor diseño */
-  }
-  
-  /* Estilos para el botón del dropdown */
-  .dropdown-button {
-    background-color: transparent; /* Fondo transparente para el botón */
-    border: none; /* Sin borde */
-    cursor: pointer; /* Cambia el cursor al pasar el ratón */
-    padding: 10px; /* Espaciado interno */
-    display: flex;
     align-items: center;
     justify-content: center;
-  }
-  
-  /* Estilos para el icono */
-  .dropdown-icon {
-    font-size: 24px; /* Tamaño del icono */
-    color: #333; /* Color del icono */
-  }
-  
+    position: absolute;
+    background-color: #f0f0f0;
+    width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    margin-top: 5px;
+    border-radius: 4px;
+}
+
+.dropdown-content button {
+    color: black;
+    padding: 12px 16px;
+    border: none;
+    background: none;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content button:hover {
+    background-color: #ddd;
+}
