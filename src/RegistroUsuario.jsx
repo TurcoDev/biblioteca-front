@@ -1,21 +1,25 @@
 // RegistroUsuario.jsx
-import React, {useEffect} from 'react';
-import { useParams } from "react-router-dom";
+import React from 'react';
+import { useParams, useNavigate } from "react-router-dom";
 import Formulario from './Formulario';
+import Bienvenida from './Bienvenida.jsx';
 
 const RegistroUsuario = () => {
-  const {role} = useParams(); // se obtiene el rol del parámetro de la URL
+  const { role } = useParams(); // Obtener el rol del parámetro de la URL
+  const navigate = useNavigate();
 
-  /* useEffect(() => {
-    console.log('role en RegistroUsuario', role);
-  }, [role]); */
+  // Función de redirección a la pantalla de inicio de sesión
+  const onSuccessfulRegister = () => {
+    navigate("/"); // Ruta de inicio de sesión en tu aplicación
+  };
+
   return (
-    <div >
-      {/* Aquí podrías añadir un título específico u otro contenido si lo deseas */}
+    <div>
       <Formulario 
         tipo="usuario" 
-        textoBoton="Creá Usuario" 
-        role= {role}
+        textoBoton="Crear Usuario" 
+        role={role}
+        onSuccessfulRegister={onSuccessfulRegister} // Pasa la función de redirección
       />
     </div>
   );

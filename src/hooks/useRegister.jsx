@@ -1,70 +1,59 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { UserContext } from '../context/UserContext';
 
-const useRegister = ( userData ) => {
-    const { user, setUser } = useContext( UserContext );
+const useRegister = (userData) => {
+    const { user, setUser } = useContext(UserContext);
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(false);
+    const [isRegistered, setIsRegistered] = useState(false); // Para rastrear el registro exitoso
 
-    const [ error, setError ] = useState( null );
-    const [ loading, setLoading ] = useState( '' );
-
-    
     const url = `http://localhost:3000/register`;
     const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(userData),
-      
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userData),
     };
-    console.log(userData)
+
     const fetchRequest = async (url) => {
-      
-      try {
-        const response = await fetch(url, options);
-        //console.log('response', response);
-        if( !response.ok ) {
-          throw new Error('Ocurrió un error al intentar registrar el usuario');
+        try {
+            const response = await fetch(url, options);
+            if (!response.ok) {
+                throw new Error('Ocurrió un error al intentar registrar el usuario');
+            }
+            return response.json();
+        } catch (error) {
+            console.log('error', error.message);
+            setError(error.message);
+            setLoading(false);
+            setUser(null);
         }
-        return response.json();
-
-      } catch (error) {
-        console.log('error', error.message);
-        setError( error.message );
-        setLoading( false );
-        setUser(null);
-      }
-
     };
 
     const getRes = async () => {
+        setLoading(true);
+        const res = await fetchRequest(url);
+        setLoading(false);
 
-        const res = await fetchRequest( url );
-        //console.log( 'res',res );
-        
-        setLoading( false );
-
-        if( res) {
-          if(res.error){
-            setError( res.error );
-            setUser(null);
-            return;
-          } else {
-            setUser( res );
-            setError( null );
-            return;
-          };
-        };
+        if (res) {
+            if (res.error) {
+                setError(res.error);
+                setUser(null);
+                setIsRegistered(false);
+            } else {
+                setUser(res);
+                setError(null);
+                setIsRegistered(true); // Marca como registrado
+            }
+        }
     };
 
-    useEffect( () => {
-
+    useEffect(() => {
         userData && getRes();
+    }, [userData]);
 
-    }, [userData] )
-
-    return [ error, loading ];
-
-}
+    return [error, loading, isRegistered]; // Retorna isRegistered
+};
 
 export default useRegister;
