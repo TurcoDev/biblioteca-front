@@ -14,7 +14,7 @@ function Home() {
   return (
     <div className="home-container">
       <div className="search-bar">
-        <input type="text" placeholder="Buscar un libro en la biblioteca..." />
+        <input type="text" placeholder="Buscar un libro" />
         <button className="search-icon">&#128269;</button> {/* icono de lupa */}
       </div>
       
