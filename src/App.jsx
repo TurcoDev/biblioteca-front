@@ -6,12 +6,11 @@ import Ingresar from './Ingresar.jsx';
 import Bienvenida from './Bienvenida';
 import EleccionGrado from "./EleccionGrado";
 import NumeroSeleccionado from "./NumeroSeleccionado";
-import IniciarSesion from './IniciarSesionEst2C.jsx';
+import IniciarSesion from './IniciarSesionUsr.jsx';
 import RegistroUsuario from './RegistroUsuario';
 import RegistroCorreo from './RegistroCorreo';
 import CrearSesionEst1C from './IniciarSesionEst1C.jsx';
-import CrearSesionEst2C from './IniciarSesionEst2C.jsx';
-import CrearSesionMayores from './IniciarSesionMayores';
+import CrearSesionUsr from './IniciarSesionUsr.jsx';
 import DropdownMenu from './PerfilAdulto.jsx';
 import ListaDeLibros from './ListaDeLibros.jsx';
 import LibroDetalles from './LibroDetalles.jsx';
@@ -42,8 +41,7 @@ function App() {
             <Route path="/iniciarsesion" element={<IniciarSesion />} />
             <Route path="/registrousuario/:role" element={<RegistroUsuario/>} />
             <Route path="/registrocorreo" element={<RegistroCorreo />} />
-            <Route path="/crearsesionmayores/:number/:color/:role" element={<CrearSesionMayores />} />
-            <Route path="/CrearSesionEst2C/:number/:color/:role" element={<CrearSesionEst2C />} />
+            <Route path="/CrearSesionUsr/:number/:color/:role" element={<CrearSesionUsr />} />
             <Route path="/CrearSesionEst1C/:number/:color/:role" element={<CrearSesionEst1C />} />
             <Route path="/listadelibros" element={<ListaDeLibros/>} />
             <Route path="/cargarlibros" element={<CargarLibros/>} />
