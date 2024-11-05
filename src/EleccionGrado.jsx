@@ -1,13 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "./context/UserContext"; // Importa el contexto de usuario
 import "./EleccionGrado.css";
 
 const EleccionGrado = () => {
   const [circles, setCircles] = useState([]);
   const navigate = useNavigate();
   const [role, setRole] = useState("estudiante");
+  const { user, setUser } = useContext(UserContext); // Usa el contexto
 
   useEffect(() => {
+    // Elimina al usuario logueado al montar el componente
+    if (user) {
+      setUser(null);
+    }
+
     const numbers = [1, 2, 3, 4, 5, 6];
     const colors = shuffleArray([
       "blue", "red", "orange", "yellow", "brown", "green",
@@ -51,7 +58,7 @@ const EleccionGrado = () => {
     if (number >= 1 && number <= 3) {
       navigate(`/CrearSesionEst1C/${number}/${encodeURIComponent(color)}/${role}`);
     } else if (number >= 4 && number <= 6) {
-      navigate(`/CrearSesionEst2C/${number}/${encodeURIComponent(color)}/${role}`);
+      navigate(`/CrearSesionUsr/${number}/${encodeURIComponent(color)}/${role}`);
     }
   };
 
