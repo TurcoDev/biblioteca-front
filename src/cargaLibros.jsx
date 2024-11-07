@@ -98,7 +98,7 @@ const CargarLibros = () => {
         <div className="formulario-contenedor">
             <div className="formulario-contenido">
                 <form onSubmit={handleSubmit} className="formulario">
-                    <h2>Cargar Libros</h2>
+                    <h2>Cargar libros</h2>
 
                     <div>
                         <label htmlFor="classroom_library_id">Biblioteca:</label>
@@ -119,7 +119,7 @@ const CargarLibros = () => {
                     </div>
 
                     <div>
-                        <label htmlFor="book_number">Número del Libro:</label>
+                        <label htmlFor="book_number">Número de libro:</label>
                         <input 
                             type="number" 
                             id="book_number" 
@@ -131,7 +131,7 @@ const CargarLibros = () => {
                     </div>
 
                     <div>
-                        <label htmlFor="title">Título del Libro:</label>
+                        <label htmlFor="title">Título del libro:</label>
                         <input 
                             type="text" 
                             id="title" 
@@ -155,7 +155,7 @@ const CargarLibros = () => {
                     </div>
 
                     <div>
-                        <label htmlFor="publication_year">Año de Publicación:</label>
+                        <label htmlFor="publication_year">Año de publicación:</label>
                         <input 
                             type="number" 
                             id="publication_year" 
@@ -167,7 +167,7 @@ const CargarLibros = () => {
                     </div>
 
                     <div>
-                        <label htmlFor="copy_number">Número de Copia:</label>
+                        <label htmlFor="copy_number">Número de copia:</label>
                         <input 
                             type="number" 
                             id="copy_number" 
@@ -210,7 +210,7 @@ const CargarLibros = () => {
 
             </div>
             <Link to="/listadelibros">
-                <button className='botonListarLibros'>Ver Lista de Libros</button>
+                <button className='botonListarLibros'>Ver lista de libros</button>
             </Link>
         </div>
     );
