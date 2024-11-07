@@ -62,7 +62,7 @@ export default function CrearSesionUsr() {
                     <path fill={decodedColor} d="M31.64,27.72a13.94,13.94,0,0,1-15.28,0A18,18,0,0,0,6.05,42.94a1,1,0,0,0,.27.75,1,1,0,0,0,.73.31H41a1,1,0,0,0,.73-.31,1,1,0,0,0,.27-.75A18,18,0,0,0,31.64,27.72Z" className="color42c3cf svgShape"></path>
                     <circle cx="24" cy="16" r="12" fill={decodedColor} className="color42c3cf svgShape"></circle>
                   </svg>
-                  <h2>Iniciar Sesión</h2>
+                  <h2>Iniciar sesión</h2>
 
                   <form className="formulario" onSubmit={manejarSubmit}>
                     <label htmlFor='usuario'>Usuario:</label>
