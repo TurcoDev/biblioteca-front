@@ -28,9 +28,9 @@ function App() {
 
   return (
     <Router>
-      <div className='contenedorPrincipal'>
+      
         <Header />
-
+        <div className='contenedorPrincipal'>
         <UserProvider>
           <Routes>
             <Route path="/" element={<Bienvenida />} />
@@ -52,8 +52,9 @@ function App() {
             <Route path="/home" element={<Home />} />
           </Routes>
         </UserProvider>
+        </div>
         <Footer />
-      </div>
+      
     </Router>
   );
 }
