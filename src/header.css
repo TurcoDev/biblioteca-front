@@ -7,7 +7,7 @@
     padding: 30px;
     background-color: rgba(248, 248, 248, 0.8); /* Fondo semitransparente */
     border-bottom: 2px solid #ddd; 
-    position: fixed;
+   /* position: fixed;*/
     top: 0;
     left: 0;
     z-index: 1000;
