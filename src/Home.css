@@ -16,35 +16,41 @@
     padding: 10px;
     width: 70%;
     margin-bottom: 20px;
-  }
-  
-  .search-bar input {
+    gap: 10px; /* Ajusta el espacio entre el input y la lupa */
+}
+
+.search-bar input {
     flex-grow: 1;
     border: none;
     outline: none;
     background: none;
-    font-size: 30px;
+    font-size: 30px; /* Tamaño del texto en el input */
     padding: 5px;
-  }
-  
-  .search-icon {
+}
+
+.search-icon {
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 36px; /* Incrementa el tamaño de la lupa */
+    color: #333; /* Ajusta el color de la lupa si es necesario */
+}
+
+  .sidebar-button {
+    top: calc(60px + 20px); /* 60px por la altura del header + 20px de margen adicional */
+    
+      background-color: #eb7272;
+      border: 1px solid #eb7272;
+      border-radius: 8px;
+      padding: 30px;
+      font-size: 30px;
+      cursor: pointer;
+      position: absolute;
+      top: 120px; /* Ajusta este valor para evitar que pise el header */
+      right: 40px;
   }
   
-  .sidebar-button {
-    background-color: #eb7272;
-    border: 1px solid #eb7272;
-    border-radius: 8px;
-    padding: 10px;
-    font-size: 30px;
-    cursor: pointer;
-    position: absolute;
-    top: 70px;
-    right: 20px;
-  }
+  
   
   .button-container {
     margin-top: 20px;
