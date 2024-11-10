@@ -5,6 +5,7 @@
     background-image: url('path/to/background-image.jpg'); /* Agrega la imagen de fondo */
     background-size: cover;
     padding: 20px;
+    margin-top: 60px;
   }
   
   .search-bar {
