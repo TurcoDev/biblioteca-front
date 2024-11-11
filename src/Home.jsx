@@ -42,6 +42,7 @@ function Home() {
 
   return (
     <div className="home-container">
+      {/* Barra de búsqueda */}
       <div className="search-bar">
         <input 
           type="text" 
@@ -49,15 +50,10 @@ function Home() {
           value={searchText}
           onChange={handleSearch}
         />
-        <button className="search-icon">&#128269;</button> {/* icono de lupa */}
-      </div>
-      
-      <div>
-        <button className="sidebar-button" onClick={toggleAula}>Mi biblioteca áulica</button>
-        {mostrarAula && <MiAula />}
+        <button className="search-icon">&#128269;</button>
       </div>
 
-      {/* Mostrar resultados solo si hay texto en el buscador */}
+      {/* Resultados del buscador */}
       {searchText && (
         <div className="book-list">
           {filteredBooks.length > 0 ? (
@@ -73,6 +69,12 @@ function Home() {
           )}
         </div>
       )}
+
+      {/* Botón para mostrar/ocultar el aula */}
+      <div>
+        <button className="sidebar-button" onClick={toggleAula}>Mi biblioteca áulica</button>
+        {mostrarAula && <MiAula />}
+      </div>
     </div>
   );
 }
