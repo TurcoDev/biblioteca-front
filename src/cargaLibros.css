@@ -40,3 +40,17 @@
     width: 100%;
     margin-bottom: 10px;
 }
+.boton-estandar {
+    background-color: #eb7272; /* Color de fondo */
+    border: 1px solid #eb7272; /* Borde del mismo color */
+    border-radius: 8px; /* Bordes redondeados */
+    color: white; /* Texto blanco */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 18px; /* Tamaño de fuente */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: background-color 0.3s ease; /* Transición suave para hover */
+}
+
+.boton-estandar:hover {
+    background-color: #d65a5a; /* Color más oscuro al pasar el cursor */
+}

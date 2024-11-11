@@ -210,8 +210,9 @@ const CargarLibros = () => {
 
             </div>
             <Link to="/listadelibros">
-                <button className='botonListarLibros'>Ver lista de libros</button>
+                <button className="boton-estandar">Ver lista de libros</button>
             </Link>
+
         </div>
     );
 };
