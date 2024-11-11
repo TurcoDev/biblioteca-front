@@ -4,8 +4,10 @@ import './cargaLibros.css';
 import BotonIngresar from './BotonIngresar';
 
 const CargarLibros = () => {
-    const [libraries, setLibraries] = useState([]); // Estado para almacenar las bibliotecas
-    const [books, setBooks] = useState([]); // Estado para almacenar los libros después de la carga
+    const [libraries, setLibraries] = useState([]);
+    const [books, setBooks] = useState([]);
+    const [message, setMessage] = useState(""); // Estado para mensajes (éxito o error)
+    const [messageType, setMessageType] = useState(""); // Para definir si es éxito o error
 
     const [formData, setFormData] = useState({
         book_number: "",
@@ -14,20 +16,18 @@ const CargarLibros = () => {
         publication_year: "",
         copy_number: "",
         origin: "",
-        classroom_library_id: "", // ID de la biblioteca
-        portada: null // Inicialmente, no hay archivo
+        classroom_library_id: "",
+        portada: null
     });
 
-    // Manejar cambios en el formulario
     const handleChange = (e) => {
         const { name, value, type, files } = e.target;
         setFormData({
             ...formData,
-            [name]: type === 'file' ? files[0] : value, // Manejar archivos
+            [name]: type === 'file' ? files[0] : value,
         });
     };
 
-    // Obtener la lista de bibliotecas y libros al cargar el componente
     useEffect(() => {
         const fetchLibraries = async () => {
             try {
@@ -53,11 +53,10 @@ const CargarLibros = () => {
         fetchBooks(); 
     }, []);
 
-    // Manejar el envío del formulario
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const newBook = new FormData(); // Usar FormData para incluir el archivo
+        const newBook = new FormData();
         for (const key in formData) {
             newBook.append(key, formData[key]);
         }
@@ -65,38 +64,50 @@ const CargarLibros = () => {
         try {
             const response = await fetch('http://localhost:3000/libro', {
                 method: 'POST',
-                body: newBook, // Enviar FormData
+                body: newBook,
             });
 
             if (response.ok) {
-                // Volver a cargar la lista de libros tras haber agregado uno nuevo
                 const updatedBooks = await fetch('http://localhost:3000/libro');
                 const booksData = await updatedBooks.json();
-                setBooks(booksData); // Actualiza la lista de libros
-                console.log("Libro registrado exitosamente:", booksData);
-                
-                // Limpiar el formulario
+                setBooks(booksData);
+
+                setMessageType("success");
+                setMessage("Libro registrado exitosamente.");
+                setTimeout(() => setMessage(""), 3000); // Borrar el mensaje después de 3 segundos
+
                 setFormData({
-                    book_number: "", 
-                    title: "", 
-                    isbn: "", 
-                    publication_year: "", 
-                    copy_number: "", 
-                    origin: "", 
-                    classroom_library_id: "", 
-                    portada: null // Restablecer el archivo
+                    book_number: "",
+                    title: "",
+                    isbn: "",
+                    publication_year: "",
+                    copy_number: "",
+                    origin: "",
+                    classroom_library_id: "",
+                    portada: null
                 });
             } else {
-                console.error("Error al registrar el libro:", response.statusText);
+                setMessageType("error");
+                setMessage("Error al registrar el libro.");
+                setTimeout(() => setMessage(""), 3000); // Borrar el mensaje después de 3 segundos
             }
         } catch (error) {
-            console.error("Error de conexión:", error);
+            setMessageType("error");
+            setMessage("Error de conexión con el servidor.");
+            setTimeout(() => setMessage(""), 3000); // Borrar el mensaje después de 3 segundos
         }
     };
 
     return (
         <div className="formulario-contenedor">
             <div className="formulario-contenido">
+                {/* Popup de mensaje de éxito o error */}
+                {message && (
+                    <div className={`alerta ${messageType}`}>
+                        <p>{message}</p>
+                    </div>
+                )}
+
                 <form onSubmit={handleSubmit} className="formulario">
                     <h2>Cargar libros</h2>
 
@@ -187,11 +198,11 @@ const CargarLibros = () => {
                             onChange={handleChange} 
                             required
                         >
-                            <option value="">Seleccione una opción</option> {/* Opción predeterminada */}
+                            <option value="">Seleccione una opción</option>
                             <option value="compra">Compra</option>
                             <option value="donación">Donación</option>
                         </select>
-                        </div>
+                    </div>
 
                     <div>
                         <label htmlFor="portada">Portada:</label>
@@ -199,7 +210,7 @@ const CargarLibros = () => {
                             type="file" 
                             id="portada" 
                             name="portada" 
-                            accept="image/*" // Aceptar solo imágenes
+                            accept="image/*"
                             onChange={handleChange} 
                             required 
                         />
@@ -207,12 +218,10 @@ const CargarLibros = () => {
 
                     <BotonIngresar texto="Registrar" />
                 </form>
-
             </div>
             <Link to="/listadelibros">
                 <button className="boton-estandar">Ver lista de libros</button>
             </Link>
-
         </div>
     );
 };
