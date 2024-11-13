@@ -18,7 +18,11 @@ function LibroDetalles() {
       .then((response) => response.json())
       .then((data) => {
         setLibro(data);
-        setEditedLibro(data);
+        // Se asegura de que el valor de 'origin' esté definido correctamente
+        setEditedLibro({
+          ...data,
+          origin: data.origin || 'compra',  // Asignar 'compra' si 'origin' está vacío
+        });
       })
       .catch((error) => console.error("Error al cargar el libro:", error));
   }, [id]);
@@ -165,7 +169,7 @@ function LibroDetalles() {
               Origen:
               <select
                 name="origin"
-                value={editedLibro.origin}
+                value={editedLibro.origin} // Valor actualizado de 'origin'
                 onChange={handleInputChange}
                 className="detalle-input"
               >
@@ -188,7 +192,6 @@ function LibroDetalles() {
               <button onClick={handleSaveClick} className="detalle-button modify-button">Guardar</button>
               <button onClick={handleBackClick} className="detalle-button modify-button">Cancelar</button>
             </div>
-
           </>
         ) : (
           <>
