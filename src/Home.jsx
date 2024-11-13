@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import MiAula from './MiAula.jsx'; 
-import './Home.css';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom"; // Importar Link para navegación
+import MiAula from "./MiAula.jsx";
+import "./Home.css";
 
 function Home() {
   const [mostrarAula, setMostrarAula] = useState(false);
-  const [searchText, setSearchText] = useState('');
+  const [searchText, setSearchText] = useState("");
   const [books, setBooks] = useState([]);
   const [filteredBooks, setFilteredBooks] = useState([]);
 
@@ -12,11 +13,11 @@ function Home() {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const response = await fetch('http://localhost:3000/libro');
+        const response = await fetch("http://localhost:3000/libro");
         const data = await response.json();
         setBooks(data);
       } catch (error) {
-        console.error('Error al obtener los libros:', error);
+        console.error("Error al obtener los libros:", error);
       }
     };
 
@@ -29,9 +30,10 @@ function Home() {
     setSearchText(text);
 
     // Filtrar libros basados en el texto ingresado
-    const filtered = books.filter((book) =>
-      book.title.toLowerCase().includes(text) ||
-      book.isbn.toLowerCase().includes(text)
+    const filtered = books.filter(
+      (book) =>
+        book.title.toLowerCase().includes(text) ||
+        book.isbn.toLowerCase().includes(text)
     );
     setFilteredBooks(filtered);
   };
@@ -44,9 +46,9 @@ function Home() {
     <div className="home-container">
       {/* Barra de búsqueda */}
       <div className="search-bar">
-        <input 
-          type="text" 
-          placeholder="Buscar un libro" 
+        <input
+          type="text"
+          placeholder="Buscar un libro"
           value={searchText}
           onChange={handleSearch}
         />
@@ -58,11 +60,15 @@ function Home() {
         <div className="book-list">
           {filteredBooks.length > 0 ? (
             filteredBooks.map((book) => (
-              <div key={book.book_number} className="book-item">
+              <Link
+                to={`/libro/${book.book_id}`} // Construir enlace con el ID del libro
+                key={book.book_number}
+                className="book-item"
+              >
                 <h3>{book.title}</h3>
                 <p>ISBN: {book.isbn}</p>
                 <p>Año: {book.publication_year}</p>
-              </div>
+              </Link>
             ))
           ) : (
             <p>No se encontraron resultados</p>
@@ -72,7 +78,9 @@ function Home() {
 
       {/* Botón para mostrar/ocultar el aula */}
       <div>
-        <button className="sidebar-button" onClick={toggleAula}>Mi biblioteca áulica</button>
+        <button className="sidebar-button" onClick={toggleAula}>
+          Mi biblioteca áulica
+        </button>
         {mostrarAula && <MiAula />}
       </div>
     </div>
