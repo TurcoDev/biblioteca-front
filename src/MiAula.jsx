@@ -42,8 +42,7 @@ const MiAula = () => {
         <div className='miAula.mostrar'>
             { libraryData ? (
                     <div className="button-container">
-                    <p>Nombre de la biblioteca: {libraryData.name}</p>
-                     <LibraryButtons />
+                    <LibraryButtons libraryData={libraryData} />
                  </div>
             ) : (
                 <p>Aún no estás registrado en ninguna biblioteca áulica</p>

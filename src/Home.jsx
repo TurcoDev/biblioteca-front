@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom"; // Importar Link para navegación
 import MiAula from "./MiAula.jsx";
+import BuscarLibro from "./BuscarLibro";
 import "./Home.css";
 
 function Home() {
   const [mostrarAula, setMostrarAula] = useState(false);
-  const [searchText, setSearchText] = useState("");
   const [books, setBooks] = useState([]);
-  const [filteredBooks, setFilteredBooks] = useState([]);
 
-  // Obtener la lista de libros al cargar el componente
   useEffect(() => {
     const fetchBooks = async () => {
       try {
@@ -24,59 +21,14 @@ function Home() {
     fetchBooks();
   }, []);
 
-  // Manejar cambios en el buscador
-  const handleSearch = (e) => {
-    const text = e.target.value.toLowerCase();
-    setSearchText(text);
-
-    // Filtrar libros basados en el texto ingresado
-    const filtered = books.filter(
-      (book) =>
-        book.title.toLowerCase().includes(text) ||
-        book.isbn.toLowerCase().includes(text)
-    );
-    setFilteredBooks(filtered);
-  };
-
   const toggleAula = () => {
     setMostrarAula(!mostrarAula);
   };
 
   return (
     <div className="home-container">
-      {/* Barra de búsqueda */}
-      <div className="search-bar">
-        <input
-          type="text"
-          placeholder="Buscar un libro"
-          value={searchText}
-          onChange={handleSearch}
-        />
-        <button className="search-icon">&#128269;</button>
-      </div>
+      <BuscarLibro books={books} />
 
-      {/* Resultados del buscador */}
-      {searchText && (
-        <div className="book-list">
-          {filteredBooks.length > 0 ? (
-            filteredBooks.map((book) => (
-              <Link
-                to={`/libro/${book.book_id}`} // Construir enlace con el ID del libro
-                key={book.book_number}
-                className="book-item"
-              >
-                <h3>{book.title}</h3>
-                <p>ISBN: {book.isbn}</p>
-                <p>Año: {book.publication_year}</p>
-              </Link>
-            ))
-          ) : (
-            <p>No se encontraron resultados</p>
-          )}
-        </div>
-      )}
-
-      {/* Botón para mostrar/ocultar el aula */}
       <div>
         <button className="sidebar-button" onClick={toggleAula}>
           Mi biblioteca áulica

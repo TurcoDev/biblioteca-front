@@ -46,7 +46,7 @@ export default function CrearSesionEst1C() {
   useEffect(() => {
     setIsLoading(loading);
     if (user) {
-      navigate('/home'); // Redirige a la página principal
+      navigate('/homeEst'); // Redirige a la página principal
     }
   }, [user, loading, navigate]);
 

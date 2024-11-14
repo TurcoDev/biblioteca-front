@@ -20,6 +20,7 @@ import MenuOpciones  from './MenuOpciones.jsx'
 import LibraryButtons from './MenuOpciones.jsx'
 import ListadoAulas from "./ListadoAulas.jsx";
 import Home from './Home.jsx';
+import HomeEst from './HomeEst.jsx';
 import './App.css';
 import CrearBiblioteca from './CrearBiblioteca.jsx';
 
@@ -50,6 +51,7 @@ function App() {
             <Route path="/CrearBiblioteca" element={<CrearBiblioteca />} />
             <Route path="/listadoaulas" element={<ListadoAulas />} />
             <Route path="/home" element={<Home />} />
+            <Route path="/homeEst" element={<HomeEst />} />
           </Routes>
         </UserProvider>
         </div>
