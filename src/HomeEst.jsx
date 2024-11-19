@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
 import MiAula from "./MiAula.jsx";
-import BuscarLibro from "./BuscarLibro.jsx";
 import { UserContext } from './context/UserContext'; 
 import userService from './services/userService.js';  //Servicios como el role
 import "./Home.css";
@@ -11,7 +10,6 @@ function HomeEst() {
   const { user, setUser } = useContext(UserContext); // user logueado, se obtiene del contexto
 
   useEffect(() => {
-    console.log(user.role_id);
     if (user && user.role_id) {
       // Setea el rol basado en el id_role del usuario
       userService.setSelectedRole(user.role_id);
@@ -39,7 +37,7 @@ function HomeEst() {
 
   return (
     <div className="home-container">
-      <BuscarLibro books={books} />
+      
       <button className="sidebar-button" onClick={toggleAula}>
           Mi biblioteca áulica
       </button>

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Libro from './Libro';
 import './ListaDeLibros.css';
 import BotonIngresar from "./BotonIngresar";
+import BuscarLibro from "./BuscarLibro.jsx";
 
 function ListaDeLibros() {
   const [books, setBooks] = useState([]);
@@ -16,7 +17,8 @@ function ListaDeLibros() {
 
   return (
     <div className="main-content">
-      <div className="card-container">
+        <div className="card-container">
+        <BuscarLibro books={books} />
         <div className="card-list">
           {books.map((libro) => (
             <Libro key={libro.book_id} libro={libro} />

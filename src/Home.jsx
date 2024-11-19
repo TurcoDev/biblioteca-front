@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import MiAula from "./MiAula.jsx";
-import BuscarLibro from "./BuscarLibro";
 import "./Home.css";
 
 function Home() {
@@ -34,8 +33,6 @@ function Home() {
 
   return (
     <div className="home-container">
-      <BuscarLibro books={books} />
-
       <div>
         <button className="sidebar-button" onClick={toggleAula}>
           Mi biblioteca áulica
