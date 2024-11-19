@@ -143,3 +143,17 @@
 .sidebar-button:hover {
   background-color: #d95d5d;
 }
+
+.botonMiAula {
+  padding: 10px 5px;
+  background-color: #eb7272;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 1.7em;
+  width: 200px;
+  text-align: center;
+  margin: 0 auto; /* Esto centra el botón horizontalmente si el contenedor tiene un ancho definido */
+  display: block; /* Asegúrate de que el botón es un bloque para que margin auto funcione */
+}

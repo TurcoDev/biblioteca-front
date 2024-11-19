@@ -7,7 +7,7 @@ import "./Home.css";
 function HomeEst() {
   const [mostrarAula, setMostrarAula] = useState(false);
   const [books, setBooks] = useState([]);
-  const { user, setUser } = useContext(UserContext); // user logueado, se obtiene del contexto
+  const { user } = useContext(UserContext); // user logueado, se obtiene del contexto
 
   useEffect(() => {
     if (user && user.role_id) {
@@ -38,7 +38,7 @@ function HomeEst() {
   return (
     <div className="home-container">
       
-      <button className="sidebar-button" onClick={toggleAula}>
+      <button className="botonMiAula" onClick={toggleAula}>
           Mi biblioteca áulica
       </button>
         {mostrarAula && <MiAula />}

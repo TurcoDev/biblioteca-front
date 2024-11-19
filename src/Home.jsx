@@ -1,10 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import MiAula from "./MiAula.jsx";
 import "./Home.css";
+import { UserContext } from './context/UserContext'; 
+import userService from './services/userService.js';  //Servicios como el role
 
 function Home() {
   const [mostrarAula, setMostrarAula] = useState(false);
   const [books, setBooks] = useState([]);
+  const { user } = useContext(UserContext); // user logueado, se obtiene del contexto
+
 
   useEffect(() => {
     if (user && user.role_id) {
@@ -34,7 +38,7 @@ function Home() {
   return (
     <div className="home-container">
       <div>
-        <button className="sidebar-button" onClick={toggleAula}>
+        <button className="botonMiAula" onClick={toggleAula}>
           Mi biblioteca áulica
         </button>
         {mostrarAula && <MiAula />}
