@@ -1,11 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import MiAula from "./MiAula.jsx";
 import BuscarLibro from "./BuscarLibro.jsx";
+import { UserContext } from './context/UserContext'; 
+import userService from './services/userService.js';  //Servicios como el role
 import "./Home.css";
 
 function HomeEst() {
   const [mostrarAula, setMostrarAula] = useState(false);
   const [books, setBooks] = useState([]);
+  const { user, setUser } = useContext(UserContext); // user logueado, se obtiene del contexto
+
+  useEffect(() => {
+    if (user && user.id_role) {
+      // Setea el rol basado en el id_role del usuario
+      userService.setSelectedRole(user.id_role);
+    }
+  }, [user]);
+
 
   useEffect(() => {
     const fetchBooks = async () => {

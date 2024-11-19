@@ -5,7 +5,7 @@ import { UserContext } from './context/UserContext.jsx'; // contexto del usuario
 import './IniciarSesionUsr.css';
 import BotonIngresar from './BotonIngresar.jsx'; // Asegúrate de que la importación es correcta
 import Home from './Home.jsx';
-import HomeEst from '/HomeEst.jsx'
+import HomeEst from './HomeEst.jsx';
 
 export default function CrearSesionUsr() {
   const navigate = useNavigate();
