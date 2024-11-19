@@ -11,9 +11,10 @@ function HomeEst() {
   const { user, setUser } = useContext(UserContext); // user logueado, se obtiene del contexto
 
   useEffect(() => {
-    if (user && user.id_role) {
+    console.log(user.role_id);
+    if (user && user.role_id) {
       // Setea el rol basado en el id_role del usuario
-      userService.setSelectedRole(user.id_role);
+      userService.setSelectedRole(user.role_id);
     }
   }, [user]);
 

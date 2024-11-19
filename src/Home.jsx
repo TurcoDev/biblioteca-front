@@ -8,6 +8,13 @@ function Home() {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
+    if (user && user.role_id) {
+      // Setea el rol basado en el id_role del usuario
+      userService.setSelectedRole(user.role_id);
+    }
+  }, [user]);
+
+  useEffect(() => {
     const fetchBooks = async () => {
       try {
         const response = await fetch("http://localhost:3000/libro");

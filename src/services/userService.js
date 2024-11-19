@@ -8,6 +8,7 @@ const userService = {
         "1015181606819299329": 'docente',
         "1016619378239045633": 'estudiante',
       };
+      console.log(id_role);
      selectedRole = roleMap[id_role] || '';
   },
 

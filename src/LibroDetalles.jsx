@@ -13,6 +13,7 @@ function LibroDetalles() {
   const [mostrarModal, setMostrarModal] = useState(false); // Estado del modal
   const [mensaje, setMensaje] = useState(''); // Mensaje del modal
   const role = userService.getSelectedRole(); // Obtener el rol actual
+  console.log(role);
   
   useEffect(() => {
     fetch(`http://localhost:3000/libro/${id}`)
@@ -203,7 +204,8 @@ function LibroDetalles() {
               <p className="detalle-book-number"><strong>Número de Libro:</strong> {libro.book_number}</p>
               <p className="detalle-copy-number"><strong>Número de Copia:</strong> {libro.copy_number}</p>
               <p className="detalle-origin"><strong>Origen:</strong> {libro.origin}</p>
-              {role !== 'estudiante' &&  (<> 
+              {role !== 'estudiante' &&  (
+                <>
                 <button onClick={handleEditClick} className="detalle-button modify-button">Modificar</button>
                 <button onClick={handleDeleteClick} className="detalle-button delete-button">Eliminar</button>
               </>)}
