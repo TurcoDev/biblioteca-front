@@ -1,24 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import userService from './services/userService.js';  //Servicios como el role
 import './LibroDetalles.css';
 
 function LibroDetalles() {
   const { id } = useParams();
   const navigate = useNavigate();
-
   const [libro, setLibro] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
   const [editedLibro, setEditedLibro] = useState({});
   const [newImage, setNewImage] = useState(null); // Para almacenar la nueva imagen
   const [mostrarModal, setMostrarModal] = useState(false); // Estado del modal
   const [mensaje, setMensaje] = useState(''); // Mensaje del modal
-
+  const role = userService.getSelectedRole(); // Obtener el rol actual
+  console.log(role);
+  
   useEffect(() => {
     fetch(`http://localhost:3000/libro/${id}`)
       .then((response) => response.json())
       .then((data) => {
         setLibro(data);
-        setEditedLibro(data);
+        // Se asegura de que el valor de 'origin' esté definido correctamente
+        setEditedLibro({
+          ...data,
+          origin: data.origin || 'compra',  // Asignar 'compra' si 'origin' está vacío
+        });
       })
       .catch((error) => console.error("Error al cargar el libro:", error));
   }, [id]);
@@ -165,7 +171,7 @@ function LibroDetalles() {
               Origen:
               <select
                 name="origin"
-                value={editedLibro.origin}
+                value={editedLibro.origin} // Valor actualizado de 'origin'
                 onChange={handleInputChange}
                 className="detalle-input"
               >
@@ -188,7 +194,6 @@ function LibroDetalles() {
               <button onClick={handleSaveClick} className="detalle-button modify-button">Guardar</button>
               <button onClick={handleBackClick} className="detalle-button modify-button">Cancelar</button>
             </div>
-
           </>
         ) : (
           <>
@@ -199,9 +204,13 @@ function LibroDetalles() {
               <p className="detalle-book-number"><strong>Número de Libro:</strong> {libro.book_number}</p>
               <p className="detalle-copy-number"><strong>Número de Copia:</strong> {libro.copy_number}</p>
               <p className="detalle-origin"><strong>Origen:</strong> {libro.origin}</p>
-              <button onClick={handleEditClick} className="detalle-button modify-button">Modificar</button>
-              <button onClick={handleDeleteClick} className="detalle-button delete-button">Eliminar</button>
+              {role !== 'estudiante' &&  (
+                <>
+                <button onClick={handleEditClick} className="detalle-button modify-button">Modificar</button>
+                <button onClick={handleDeleteClick} className="detalle-button delete-button">Eliminar</button>
+              </>)}
               <button onClick={handleBackClick} className="detalle-button back-button">Volver al Listado</button>
+              
             </div>
           </>
         )}

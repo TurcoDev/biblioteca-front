@@ -40,3 +40,56 @@
     width: 100%;
     margin-bottom: 10px;
 }
+.boton-estandar {
+    background-color: #eb7272; /* Color de fondo */
+    border: 1px solid #eb7272; /* Borde del mismo color */
+    border-radius: 8px; /* Bordes redondeados */
+    color: white; /* Texto blanco */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 18px; /* Tamaño de fuente */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: background-color 0.3s ease; /* Transición suave para hover */
+}
+
+.boton-estandar:hover {
+    background-color: #d65a5a; /* Color más oscuro al pasar el cursor */
+}
+
+/* Estilo de la alerta emergente (popup) */
+.alerta {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #eb7272;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 300px;
+    text-align: center;
+}
+
+.alerta.success {
+    background-color: #28a745; /* Color verde para éxito */
+}
+
+.alerta.error {
+    background-color: #dc3545; /* Color rojo para error */
+}
+
+/* Asegura que el mensaje desaparezca después de unos segundos */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.alerta.fade-out {
+    animation: fadeOut 3s forwards;
+}

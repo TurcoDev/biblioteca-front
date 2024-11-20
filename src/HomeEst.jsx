@@ -1,14 +1,13 @@
 import React, { useState, useEffect, useContext } from "react";
 import MiAula from "./MiAula.jsx";
-import "./Home.css";
 import { UserContext } from './context/UserContext'; 
 import userService from './services/userService.js';  //Servicios como el role
+import "./Home.css";
 
-function Home() {
+function HomeEst() {
   const [mostrarAula, setMostrarAula] = useState(false);
   const [books, setBooks] = useState([]);
   const { user } = useContext(UserContext); // user logueado, se obtiene del contexto
-
 
   useEffect(() => {
     if (user && user.role_id) {
@@ -16,6 +15,7 @@ function Home() {
       userService.setSelectedRole(user.role_id);
     }
   }, [user]);
+
 
   useEffect(() => {
     const fetchBooks = async () => {
@@ -37,14 +37,15 @@ function Home() {
 
   return (
     <div className="home-container">
-      <div>
-        <button className="botonMiAula" onClick={toggleAula}>
+      
+      <button className="botonMiAula" onClick={toggleAula}>
           Mi biblioteca áulica
-        </button>
+      </button>
         {mostrarAula && <MiAula />}
-      </div>
+       
+      
     </div>
   );
 }
 
-export default Home;
+export default HomeEst;

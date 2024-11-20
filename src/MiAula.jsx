@@ -22,7 +22,7 @@ const MiAula = () => {
                     const sectionData = await sectionResponse.json();
 
                     // Obtener datos de la biblioteca
-                    const libraryResponse = await fetch(`http://localhost:3000/biblioteca/${sectionData.classroom_libraries_id}`);
+                    const libraryResponse = await fetch(`http://localhost:3000/biblioteca/${sectionData.classroom_library_id}`);
                     const libraryData = await libraryResponse.json();
 
                     setLibraryData(libraryData); // Guardar datos en el estado
@@ -40,10 +40,9 @@ const MiAula = () => {
 
     return (
         <div className='miAula.mostrar'>
-            {libraryData ? (
-                <div className="button-container">
-                    <p>Nombre de la biblioteca: {libraryData.name}</p>
-                     <LibraryButtons />
+            { libraryData ? (
+                    <div className="button-container">
+                    <LibraryButtons libraryData={libraryData} />
                  </div>
             ) : (
                 <p>Aún no estás registrado en ninguna biblioteca áulica</p>

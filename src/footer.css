@@ -7,7 +7,7 @@
     padding: 20px; /* Aumenta el padding para que el footer sea más alto */
     background-color: rgba(248, 248, 248, 0.8); /* Fondo semitransparente similar al header */
     border-top: 2px solid #ddd; /* Línea superior para el footer */
-    position: fixed; /* Fija el footer en la parte inferior de la página */
+     /* Fija el footer en la parte inferior de la página */
     bottom: 0; /* Posiciona el footer en la parte inferior de la página */
     left: 0; /* Asegura que el footer cubra toda la pantalla de izquierda a derecha */
     z-index: 1000; /* Asegura que el footer esté por encima de otros elementos */

@@ -4,10 +4,10 @@
     align-items: center;
     justify-content: center;
     width: 100%; /* Ocupa todo el ancho de la pantalla */
-    padding: 30px;
+    padding: 50px;
     background-color: rgba(248, 248, 248, 0.8); /* Fondo semitransparente */
-    border-bottom: 2px solid #ddd; 
-    position: fixed;
+    border-bottom: 1px solid #ddd; 
+   /* position: fixed;*/
     top: 0;
     left: 0;
     z-index: 1000;
