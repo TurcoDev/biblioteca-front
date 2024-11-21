@@ -7,7 +7,7 @@ const useRegister = (userData) => {
     const [loading, setLoading] = useState(false);
     const [isRegistered, setIsRegistered] = useState(false); // Para rastrear el registro exitoso
 
-    const url = `http://localhost:3000/register`;
+    const url = `https://biblioteca-back-cpfs.onrender.com/register`;
     const options = {
         method: 'POST',
         headers: {

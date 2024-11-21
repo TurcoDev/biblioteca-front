@@ -7,7 +7,7 @@ const ListadoAulas = () => {
     const [editarAula, setEditarAula] = useState(null);
 
     useEffect(() => {
-        fetch("http://localhost:3000/biblioteca")
+        fetch("https://biblioteca-back-cpfs.onrender.com/biblioteca")
           .then((response) => response.json())
           .then((data) => setAulas(data))
           .catch((error) => console.error("Error al cargar las aulas:", error));
@@ -23,7 +23,7 @@ const ListadoAulas = () => {
     };
 
     const handleEliminar = (id) => {
-        fetch(`http://localhost:3000/biblioteca/${id}`, {
+        fetch(`https://biblioteca-back-cpfs.onrender.com/biblioteca/${id}`, {
             method: 'DELETE',
         })
         .then((response) => {
@@ -38,7 +38,7 @@ const ListadoAulas = () => {
     };
 
     const handleModificar = () => {
-        fetch(`http://localhost:3000/biblioteca/${editarAula.classroom_library_id}`, {
+        fetch(`https://biblioteca-back-cpfs.onrender.com/biblioteca/${editarAula.classroom_library_id}`, {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json',

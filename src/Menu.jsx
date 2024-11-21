@@ -4,7 +4,7 @@ const Menu = () => {
     return (
       <div className="menu-container">
         <div className="logo">
-          <img src="ruta/a/tu/logo.png" alt="Logo" className="logo-img" />
+          <img src="/images/logo.png" alt="Logo" className="logo-img" />
         </div>
         <ul className="menu-list">
           <li className="menu-item">Búsqueda y reserva de libros</li>

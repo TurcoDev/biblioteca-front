@@ -31,7 +31,7 @@ const CargarLibros = () => {
     useEffect(() => {
         const fetchLibraries = async () => {
             try {
-                const response = await fetch('http://localhost:3000/biblioteca');
+                const response = await fetch(`https://biblioteca-back-cpfs.onrender.com/biblioteca`);
                 const data = await response.json();
                 setLibraries(data); 
             } catch (error) {
@@ -41,7 +41,7 @@ const CargarLibros = () => {
 
         const fetchBooks = async () => {
             try {
-                const response = await fetch('http://localhost:3000/libro');
+                const response = await fetch(`https://biblioteca-back-cpfs.onrender.com/libro`);
                 const data = await response.json();
                 setBooks(data); 
             } catch (error) {
@@ -62,13 +62,13 @@ const CargarLibros = () => {
         }
 
         try {
-            const response = await fetch('http://localhost:3000/libro', {
+            const response = await fetch(`https://biblioteca-back-cpfs.onrender.com/libro`, {
                 method: 'POST',
                 body: newBook,
             });
 
             if (response.ok) {
-                const updatedBooks = await fetch('http://localhost:3000/libro');
+                const updatedBooks = await fetch(`https://biblioteca-back-cpfs.onrender.com/libro`);
                 const booksData = await updatedBooks.json();
                 setBooks(booksData);
 

@@ -12,17 +12,17 @@ const MiAula = () => {
         const fetchLibraryData = async () => {
             try {
                 // Obtener el estudiante que coincide con el user_id
-                const estudianteResponse = await fetch("http://localhost:3000/estudiante/");
+                const estudianteResponse = await fetch("https://biblioteca-back-cpfs.onrender.com/estudiante/");
                 const estudiantesData = await estudianteResponse.json();
                 const estudiante = estudiantesData.find(est => est.user_id === user.user_id);
 
                 if (estudiante) {
                     // Obtener datos de la sección
-                    const sectionResponse = await fetch(`http://localhost:3000/seccion/${estudiante.section_id}`);
+                    const sectionResponse = await fetch(`https://biblioteca-back-cpfs.onrender.com/seccion/${estudiante.section_id}`);
                     const sectionData = await sectionResponse.json();
 
                     // Obtener datos de la biblioteca
-                    const libraryResponse = await fetch(`http://localhost:3000/biblioteca/${sectionData.classroom_library_id}`);
+                    const libraryResponse = await fetch(`https://biblioteca-back-cpfs.onrender.com/biblioteca/${sectionData.classroom_library_id}`);
                     const libraryData = await libraryResponse.json();
 
                     setLibraryData(libraryData); // Guardar datos en el estado

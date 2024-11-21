@@ -6,7 +6,7 @@ const Header = () => {
         <header className="header">
             {/* Contenedor para el logo y el título */}
             <div className="logo-container">
-                <img src="\logo.png" alt="Logo" className="logo" />
+                <img src="/images/logo.png" alt="Logo" className="logo" />
             </div>
             <h1 className="header-title">BIBLIOTECA ÁULICA</h1>
         </header>

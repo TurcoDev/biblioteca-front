@@ -16,7 +16,7 @@ function LibroDetalles() {
   console.log(role);
   
   useEffect(() => {
-    fetch(`http://localhost:3000/libro/${id}`)
+    fetch(`https://biblioteca-back-cpfs.onrender.com/libro/${id}`)
       .then((response) => response.json())
       .then((data) => {
         setLibro(data);
@@ -55,7 +55,7 @@ function LibroDetalles() {
       formData.append('portada', newImage);
     }
 
-    fetch(`http://localhost:3000/libro/${id}`, {
+    fetch(`https://biblioteca-back-cpfs.onrender.com/libro/${id}`, {
       method: 'PUT',
       body: formData // Enviar los datos como formData
     })
@@ -84,7 +84,7 @@ function LibroDetalles() {
   };
 
   const handleDeleteClick = () => {
-    fetch(`http://localhost:3000/libro/${id}`, {
+    fetch(`https://biblioteca-back-cpfs.onrender.com/libro/${id}`, {
       method: 'DELETE'
     })
     .then(response => {

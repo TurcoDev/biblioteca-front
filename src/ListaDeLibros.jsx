@@ -9,7 +9,7 @@ function ListaDeLibros() {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/libro")
+    fetch("https://biblioteca-back-cpfs.onrender.com/libro")
       .then((response) => response.json())
       .then((data) => setBooks(data))
       .catch((error) => console.error("Error al cargar los libros:", error));

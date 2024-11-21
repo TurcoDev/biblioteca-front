@@ -20,7 +20,7 @@ function Home() {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const response = await fetch("http://localhost:3000/libro");
+        const response = await fetch("https://biblioteca-back-cpfs.onrender.com/libro");
         const data = await response.json();
         setBooks(data);
       } catch (error) {
